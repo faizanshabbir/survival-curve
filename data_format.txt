@@ -1,8 +1,0 @@
-#groups
-#samples/group
-length of experiment (days)
-two series of data:
-	-Time of death
-	-How many
-*Later allow multiple survival sets
-*later allow multiple data formats (ex one time of death for each sample instead of time+count)
