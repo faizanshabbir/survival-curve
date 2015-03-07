@@ -1,22 +1,37 @@
 import numpy as np
+from lifelines import KaplanMeierFitter
+
+def writeArrayToFile(varname,arrayToWrite):
+	filepath = 'log'+varname+'.txt'
+	with open(filepath,'w'):
+		pass
+		f = open(filepath, 'a+')
+		for data in arrayToWrite:
+			f.write(str(data)+'\n')
+		f.close()
 
 # Create lifetimes, but censor all lifetimes after time 12
 censor_after = 12
 actual_lifetimes = np.random.exponential(10, size=20)
-print (actual_lifetimes)
-print ()
-observed_lifetimes = np.minimum( actual_lifetimes, censor_after*np.ones(20) )
-print (observed_lifetimes)
+
+observed_lifetimes = np.minimum(actual_lifetimes, censor_after*np.ones(20) )
 C = (actual_lifetimes < censor_after) #boolean array
 
-from lifelines import KaplanMeierFitter
+## Write variables to files for debugging
+# varn = 'actual_lifetimes'
+# writeArrayToFile(varn,actual_lifetimes)
+# varn = 'observed_lifetimes'
+# writeArrayToFile(varn,observed_lifetimes)
+# varn = 'event_observed'
+# writeArrayToFile(varn,C)
+
 
 kmf = KaplanMeierFitter(1)
 kmf.fit(observed_lifetimes, event_observed=C)
 print (kmf)
 # fitter methods have an internal plotting method.
 # plot the curve with the confidence intervals
-kmf.plot()
+#kmf.plot()
 
 import pylab
 pylab.show()
