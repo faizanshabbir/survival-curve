@@ -1,0 +1,43 @@
+.page-header {
+	background-color: #FF9400;
+	margin-top: 0;
+	padding: 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a {
+	color: #FFFFFF;
+	font-size: 36pt;
+	text-decoration: none;
+}
+
+.content {
+	margin-left: 40px;
+}
+
+.date {
+	color: #828282;
+	float: right;
+}
+
+.save {
+	float: right;
+}
+
+.post-form textarea, .post-form input {
+	width: 100%;
+}
+
+.top-menu {
+	color: #FFFFFF;
+	float: right;
+	font-size: 26px;
+	margin-size: 26px;
+}
+
+.post {
+	margin-left: 70px;
+}
+
+.post h1 a {
+	color: #000000;
+}
