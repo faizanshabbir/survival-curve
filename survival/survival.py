@@ -1,7 +1,8 @@
 import numpy as np
 from lifelines import KaplanMeierFitter
+import re
 
-def random_data:
+def random_data():
 	# Create lifetimes, but censor all lifetimes after time 12
 	censor_after = 12
 	actual_lifetimes = np.random.exponential(10, size=20)
@@ -12,4 +13,11 @@ def random_data:
 
 	kmf = KaplanMeierFitter()
 	kmf.fit(observed_lifetimes, event_observed=C)
-	return True
+	sf = getattr(kmf, "survival_function_")
+	return survival_data_to_json(sf)
+
+def survival_data_to_json(data):
+	json_string = data.to_json();
+	# regex = re.compile(r'(\{\s*"KM_estimate":\s*)\{(.*)\}(\})')
+	# return re.sub(regex, r"\1[\2]\3", json_string)
+	return json_string

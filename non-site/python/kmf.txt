@@ -1,135 +1,22 @@
---dir--
-['_KaplanMeierFitter__estimate',
- '__class__',
- '__delattr__',
- '__dict__',
- '__dir__',
- '__doc__',
- '__eq__',
- '__format__',
- '__ge__',
- '__getattribute__',
- '__gt__',
- '__hash__',
- '__init__',
- '__le__',
- '__lt__',
- '__module__',
- '__ne__',
- '__new__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__setattr__',
- '__sizeof__',
- '__str__',
- '__subclasshook__',
- '__weakref__',
- '_additive_f',
- '_additive_var',
- '_bounds',
- '_label',
- 'alpha',
- 'conditional_time_to',
- 'confidence_interval_',
- 'divide',
- 'durations',
- 'entry',
- 'event_observed',
- 'event_table',
- 'fit',
- 'median_',
- 'plot',
- 'plot_survival_function_',
- 'predict',
- 'subtract',
- 'survival_function_',
- 'timeline']
---dict--
-{ '_KaplanMeierFitter__estimate':            KM-estimate
+sf:            KM_estimate
 timeline              
 0.000000          1.00
-0.376063          0.95
-1.479159          0.90
-2.329890          0.85
-2.841712          0.80
-4.524087          0.75
-5.760251          0.70
-5.896058          0.65
-6.653669          0.60
-8.138926          0.55
-8.233347          0.50
-8.436414          0.45
-10.691722         0.40
-11.954541         0.35
-12.000000         0.35,
-  '_label': 'KM-estimate',
-  'alpha': 1,
-  'confidence_interval_':            KM-estimate_upper_1.00  KM-estimate_lower_1.00
-0.000000                      NaN                     NaN
-0.376063                      NaN                     NaN
-1.479159                      NaN                     NaN
-2.329890                      NaN                     NaN
-2.841712                      NaN                     NaN
-4.524087                      NaN                     NaN
-5.760251                      NaN                     NaN
-5.896058                      NaN                     NaN
-6.653669                      NaN                     NaN
-8.138926                      NaN                     NaN
-8.233347                      NaN                     NaN
-8.436414                      NaN                     NaN
-10.691722                     NaN                     NaN
-11.954541                     NaN                     NaN
-12.000000                     NaN                     NaN,
-  'divide': <function _divide.<locals>.divide at 0x0000000006ABC840>,
-  'durations': array([ 12.        ,  11.954541  ,   2.84171249,   5.89605761,
-        12.        ,  12.        ,  12.        ,   4.52408666,
-         8.43641416,  12.        ,   1.47915859,  10.69172228,
-         8.2333474 ,   0.37606285,  12.        ,   5.76025071,
-         8.13892633,   2.32988968,  12.        ,   6.65366879]),
-  'entry': None,
-  'event_observed': array([0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1]),
-  'event_table':            removed  observed  censored  entrance
-event_at                                        
-0.000000         0         0         0        20
-0.376063         1         1         0         0
-1.479159         1         1         0         0
-2.329890         1         1         0         0
-2.841712         1         1         0         0
-4.524087         1         1         0         0
-5.760251         1         1         0         0
-5.896058         1         1         0         0
-6.653669         1         1         0         0
-8.138926         1         1         0         0
-8.233347         1         1         0         0
-8.436414         1         1         0         0
-10.691722        1         1         0         0
-11.954541        1         1         0         0
-12.000000        7         0         7         0,
-  'median_': 8.4364141625025297,
-  'plot': <function plot_estimate.<locals>.plot at 0x0000000006ABC8C8>,
-  'plot_survival_function_': <function plot_estimate.<locals>.plot at 0x0000000006ABC8C8>,
-  'predict': <function _predict.<locals>.predict at 0x0000000006ABC6A8>,
-  'subtract': <function _subtract.<locals>.subtract at 0x0000000006ABC7B8>,
-  'survival_function_':            KM-estimate
-timeline              
-0.000000          1.00
-0.376063          0.95
-1.479159          0.90
-2.329890          0.85
-2.841712          0.80
-4.524087          0.75
-5.760251          0.70
-5.896058          0.65
-6.653669          0.60
-8.138926          0.55
-8.233347          0.50
-8.436414          0.45
-10.691722         0.40
-11.954541         0.35
-12.000000         0.35,
-  'timeline': array([  0.        ,   0.37606285,   1.47915859,   2.32988968,
-         2.84171249,   4.52408666,   5.76025071,   5.89605761,
-         6.65366879,   8.13892633,   8.2333474 ,   8.43641416,
-        10.69172228,  11.954541  ,  12.        ])}
---timeline--
+0.147373          0.95
+0.905735          0.90
+2.132283          0.85
+4.192288          0.80
+4.486271          0.75
+4.534896          0.70
+5.139645          0.65
+5.818095          0.60
+7.226876          0.55
+7.628612          0.50
+8.297763          0.45
+9.166345          0.40
+10.585556         0.35
+11.600319         0.30
+11.601105         0.25
+11.602210         0.20
+12.000000         0.20 
+
+
