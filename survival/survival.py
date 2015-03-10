@@ -21,3 +21,11 @@ def survival_data_to_json(data):
 	# regex = re.compile(r'(\{\s*"KM_estimate":\s*)\{(.*)\}(\})')
 	# return re.sub(regex, r"\1[\2]\3", json_string)
 	return json_string
+
+def generate_curve(data):
+	time1 = data['time1']
+	data1 = data['data1']
+	time2 = data['time2']
+	data2 = data['data2']
+
+	return random_data()
