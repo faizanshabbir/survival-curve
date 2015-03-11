@@ -17,7 +17,7 @@ def random_data():
 	return survival_data_to_json(sf)
 
 def survival_data_to_json(data):
-	json_string = data.to_json();
+	json_string = data.to_json(orient="split");
 	# regex = re.compile(r'(\{\s*"KM_estimate":\s*)\{(.*)\}(\})')
 	# return re.sub(regex, r"\1[\2]\3", json_string)
 	return json_string

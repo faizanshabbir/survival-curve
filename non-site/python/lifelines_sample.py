@@ -16,9 +16,8 @@ kmf.fit(observed_lifetimes, event_observed=C)
 # print "-----------"
 sf = getattr(kmf, "survival_function_")
 # print "sf:", sf, "\n"
-json_string = sf.to_json();
-regex = re.compile(r'(\{\s*"KM_estimate":\s*)\{(.*)\}(\})')
-print re.sub(r'(\{\s*"KM_estimate":\s*)\{(.*)\}(\})', "\1[\2]\3", json_string)
+json_string = sf.to_json(orient="split");
+print json_string
 # for attr, value in sf.__dict__.iteritems():
         # print attr + "---", value
 # kmf_e = getattr(kmf, "_KaplanMeierFitter__estimate")
@@ -31,8 +30,8 @@ print re.sub(r'(\{\s*"KM_estimate":\s*)\{(.*)\}(\})', "\1[\2]\3", json_string)
 # print (kmf)
 # fitter methods have an internal plotting method.
 # plot the curve with the confidence intervals
-# kmf.plot()
+kmf.plot()
 
-# import pylab
-# pylab.show()
+import pylab
+pylab.show()
 # pylab.savefig('foo.svg', format="svg", bbox_inches='tight')

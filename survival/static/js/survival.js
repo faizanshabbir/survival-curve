@@ -1,17 +1,30 @@
 function serverJsonToPlottable(json) {
-	console.debug("serverJsonToPlottable");
-	var km_estimate = json["KM_estimate"];
-	var estimate = [];
-	for (var key in km_estimate) {
-		var value = km_estimate[key];
-		console.log("key", key, "value", value);
-		estimate.push({key: value});
-	}
-	//Just to be safe, sort array
-	// estimate.sort(function (a, b) {
-	// 	//TODO
-	// });
-	console.log(estimate);
+	console.debug("serverJsonToPlottable", json);
+	var x = json.index;
+	var y = json.data.map(function (singleArray) {
+		return singleArray[0];
+	});
+	plotSurvival({
+		x: x,
+		data1: y
+	});
+}
+
+function plotSurvival(json) {
+	console.debug("Plottable json", json);
+	var c3args = {
+	    data: {
+	        x: 'x',
+	        columns: [
+	            ['x'].concat(json.x),
+	            ['data1'].concat(json.data1)
+	        ]
+	        //Line curve is broken in Chrome, but step chart works
+	    }
+	};
+
+	console.debug("c3args", c3args);
+	var chart = c3.generate(c3args);
 }
 
 function getRandomData() {
