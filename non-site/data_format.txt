@@ -6,3 +6,19 @@ two series of data:
 	-How many
 *Later allow multiple survival sets
 *later allow multiple data formats (ex one time of death for each sample instead of time+count)
+
+{
+	groups: n,
+	samplesInGroup: n,
+	lengthOfExprimentInDays: n,
+	dataSets: [
+		{
+			data: [n1, n2, ...],
+			time: [t1, t2, ...]
+		},
+		{
+			data: [n1, n2, ...],
+			time: [t1, t2, ...]
+		}
+	]
+}
