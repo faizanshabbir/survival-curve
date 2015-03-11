@@ -18,8 +18,11 @@ function plotSurvival(json) {
 	        columns: [
 	            ['x'].concat(json.x),
 	            ['data1'].concat(json.data1)
-	        ]
+	        ],
 	        //Line curve is broken in Chrome, but step chart works
+	        types: {
+	        	data1: "step"
+	        }
 	    }
 	};
 
