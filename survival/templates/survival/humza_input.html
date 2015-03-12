@@ -1,0 +1,70 @@
+{% extends 'survival/base.html' %}
+<!-- 
+{
+	groups: n,
+	samplesInGroup: n,
+	lengthOfExprimentInDays: n,
+	dataSets: [
+		{
+			data: [n1, n2, ...],
+			time: [t1, t2, ...]
+		},
+		{
+			data: [n1, n2, ...],
+			time: [t1, t2, ...]
+		}
+	]
+}
+-->
+{% block head %}
+	<script type="text/javascript">
+		$(function() {
+		    $("form").on('submit', function(event) {
+		    	event.preventDefault();
+		    	submitForm($(this));
+		    });
+		  });
+	</script>
+{% endblock %}
+{% block content %}
+	<h3>Input Data</h3>
+	<form action="">
+		<table>
+			<tr>
+				<td>Number of groups:</td>
+				<td><input type="text" name="numberOfGroups"></td>
+			</tr>
+			<tr>
+				<td>Samples per group:</td>
+				<td><input type="text" name="samplesInGroup"></td>
+			</tr>
+			<tr>
+				<td>Length of experiment (days):</td>
+				<td><input type="text" name="lengthOfExprimentInDays"></td>
+			</tr>
+			<tr>
+				<td>Group 1</td>
+			</tr>
+			<tr>
+				<td>Data Series 1</td>
+				<td><input type="text" name="data1"></td>
+			</tr>
+			<tr>
+				<td>Time Series 1</td>
+				<td><input type="text" name="time1"></td>
+			</tr>
+			<tr>
+				<td>Group 2</td>
+			</tr>
+			<tr>
+				<td>Data Series 2</td>
+				<td><input type="text" name="data2"></td>
+			</tr>
+			<tr>
+				<td>Time Series 2</td>
+				<td><input type="text" name="time2"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Generate Curve">
+	</form>
+{% endblock %}

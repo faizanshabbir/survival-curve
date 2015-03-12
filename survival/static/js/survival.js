@@ -50,9 +50,60 @@ function getFormData($form) {
 	return indexed_array;
 }
 
+/**
+ * Serializes jQuery form object into required json 
+ * object and submits form. JSON format is:
+ *
+ * {
+		numberOfGroups: n,
+		samplesInGroup: n,
+		lengthOfExprimentInDays: n,
+		dataSets: [
+			{
+				data: [n1, n2, ...],
+				time: [t1, t2, ...]
+			},
+			{
+				data: [n1, n2, ...],
+				time: [t1, t2, ...]
+			}
+		]
+	}
+ * @param  {jQuery Object} formObj form jQuery object
+ */
+function submitForm(formObj) {
+	console.debug("submitForm", formObj);
+	var data = {};
+	//Integer inputs
+	var integerInputs = ['numberOfGroups', 'samplesInGroup', 'lengthOfExprimentInDays'];
+	integerInputs.forEach(function(inputName) {
+		var input = getInput(inputName);
+		var name = input.attr('name');
+		var value = input.val();
+		data[name] = value;
+	});
+	console.log(data);
+	//Data sets
+	var dataSets = [];
+	for (var i=1; i <= data.numberOfGroups; i++) {
+		var dataSet = {};
+		var dataSeries = getInput("data" + i);
+		var timeSeries = getInput("time" + i);
+		dataSet["data"] = dataSeries.val().split(",");
+		dataSet["time"] = timeSeries.val().split(",");
+		dataSets.push(dataSet);
+	}
+	data["dataSets"] = dataSets;
+	console.log(data);
+}
+
+function getInput(inputName) {
+	return $('form :input[name="' + inputName + '"]');
+}
+
 function submitData() {
 	var form = $("form");
-	jsonFormattedData = getFormData(form);
+	var jsonFormattedData = getFormData(form);
 	console.log(jsonFormattedData);
 	console.log(JSON.stringify(jsonFormattedData));
 

@@ -16,6 +16,9 @@ def random_data(request):
 def input_data(request):
 	return render(request, 'survival/input_data.html')
 
+def humza_input(request):
+	return render(request, 'survival/humza_input.html')
+
 def generate_curve(request):
 	
 	if request.method == 'POST':
