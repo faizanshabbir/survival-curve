@@ -91,10 +91,12 @@ function submitForm(formObj) {
 		var timeSeries = getInput("time" + i);
 		dataSet["data"] = dataSeries.val().split(",");
 		dataSet["time"] = timeSeries.val().split(",");
+		console.log(dataSeries.val().split(","))
 		dataSets.push(dataSet);
 	}
 	data["dataSets"] = dataSets;
 	console.log(data);
+	console.log(JSON.stringify(data));
 }
 
 function getInput(inputName) {
@@ -104,54 +106,38 @@ function getInput(inputName) {
 function submitData() {
 	var form = $("form");
 	var jsonFormattedData = getFormData(form);
-	console.log(jsonFormattedData);
-	console.log(JSON.stringify(jsonFormattedData));
+	
+	var time1 = document.getElementById('time1').value;
+	var data1 = document.getElementById('data1').value;
+	var time2 = document.getElementById('time2').value;
+	var data2 = document.getElementById('data2').value;
+	time1 = time1.split(",");
+	console.log(time1);
+	data1 = data1.split(",");
+	time2 = time2.split(",");
+	data2 = data2.split(",");
 
-/*
-	//MODIFY AJAX METHOD FOR POSTING WITH CSRF TOKEN
-	$.ajaxSend(function(event, xhr, settings) {
-    function getCookie(name) {
-        var cookieValue = null;
-        if (document.cookie && document.cookie != '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = jQuery.trim(cookies[i]);
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
-    function sameOrigin(url) {
-        // url could be relative or scheme relative or absolute
-        var host = document.location.host; // host + port
-        var protocol = document.location.protocol;
-        var sr_origin = '//' + host;
-        var origin = protocol + sr_origin;
-        // Allow absolute or scheme relative URLs to same origin
-        return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
-            (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
-            // or any other URL that isn't scheme relative or absolute i.e relative.
-            !(/^(\/\/|http:|https:).*//*.test(url));
-    }
-    function safeMethod(method) {
-        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
+	var data = {};
+	var dataSets = [];
+	var dataSet = {};
+	dataSet["time"] = time1;
+	dataSet["data"] = data1;
+	dataSets.push(dataSet);
 
-    if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
-        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
-    }
-	});
-	//END AJAX METHOD
-*/
+	dataSet = {};
+	dataSet["time"] = time2;
+	dataSet["data"] = data2;
+	dataSets.push(dataSet);
+
+	data["dataSets"] = dataSets;
+	
+	console.log(data);
+	console.log(JSON.stringify(data));
 	//return jsonFormattedData;
 	$.ajax({
         type: "POST",
         url: "/generate_curve",
-        data: JSON.stringify(jsonFormattedData),
+        data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data){console.log(data);},

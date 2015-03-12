@@ -23,9 +23,25 @@ def survival_data_to_json(data):
 	return json_string
 
 def generate_curve(data):
-	time1 = data['time1']
-	data1 = data['data1']
-	time2 = data['time2']
-	data2 = data['data2']
+	dataSets = data['dataSets']
+	time_1 = dataSets[0]['time']
+	data_1 = dataSets[0]['data']
+	data_1 = np.array(data_1)
+	data_1 = data_1.astype(bool)
 
-	return random_data()
+	kmf = KaplanMeierFitter()
+	#kmf.fit(time_1,event_observed = data_1)  # THIS LINE IS THE ONE CASTING THE ERROR, EVEN THOUGH IT IS THE DATA TYPES REQD.
+	
+	#sf = gettatr(kmf, "survival_function_")
+	#return survival_data_to_json(sf)
+
+
+
+	#for dataSets in data:
+	#	time = dataSets['time']
+	#	data = dataSets['data']
+	#	kmf = KaplanMeierFitter()
+	#	kmf.fit(time,data)
+		#call plot here
+
+	return len(data_1)

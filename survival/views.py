@@ -23,8 +23,12 @@ def generate_curve(request):
 	
 	if request.method == 'POST':
 		data = json.loads(request.body)
+		print(data)
 		data = survival.generate_curve(data)
-		return HttpResponse(data, content_type="application/json")
+		#return HttpResponse(data, content_type="application/json")
+		return HttpResponse(
+            data
+        )
 	else:
 		return HttpResponse(
             json.dumps({"nothing to see": "here"}),
