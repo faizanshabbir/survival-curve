@@ -140,7 +140,7 @@ function submitData() {
         data: JSON.stringify(data),
         contentType: "application/json",
         dataType: "json",
-        success: function(data){console.log(data);},
+        success: serverJsonToPlottable,
         failure: function(errMsg){alert(errMsg);
         }
     });
