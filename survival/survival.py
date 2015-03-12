@@ -26,22 +26,21 @@ def generate_curve(data):
 	dataSets = data['dataSets']
 	time_1 = dataSets[0]['time']
 	data_1 = dataSets[0]['data']
-	data_1 = np.array(data_1)
+
+	#convert from string to numeric arrays for sorting
+	time_1 = np.array(map(float,time_1))
+	data_1 = np.array(map(int,data_1))
+	#data_1 = [data_1 for (time_1,data_1) in sorted (zip(time_1,data_1))]
+	time_1 = np.sort(time_1)
+	perm = time_1.argsort()
+	data_1 = data_1[perm]
+
+	#convert death array into boolean array required for pipelines
 	data_1 = data_1.astype(bool)
 
 	kmf = KaplanMeierFitter()
-	#kmf.fit(time_1,event_observed = data_1)  # THIS LINE IS THE ONE CASTING THE ERROR, EVEN THOUGH IT IS THE DATA TYPES REQD.
+	kmf.fit(time_1,event_observed=data_1)  
 	
-	#sf = gettatr(kmf, "survival_function_")
-	#return survival_data_to_json(sf)
-
-
-
-	#for dataSets in data:
-	#	time = dataSets['time']
-	#	data = dataSets['data']
-	#	kmf = KaplanMeierFitter()
-	#	kmf.fit(time,data)
-		#call plot here
-
-	return len(data_1)
+	#sf = gettatr(kmf, "survival_function_") #GETTING ERROR BUT IDK WHY
+	sf = kmf.survival_function_
+	return survival_data_to_json(sf)

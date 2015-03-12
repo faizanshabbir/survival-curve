@@ -138,7 +138,7 @@ function submitData() {
         type: "POST",
         url: "/generate_curve",
         data: JSON.stringify(data),
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/json",
         dataType: "json",
         success: function(data){console.log(data);},
         failure: function(errMsg){alert(errMsg);
