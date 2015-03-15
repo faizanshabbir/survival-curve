@@ -23,11 +23,27 @@ function plotSurvival(json) {
 	        types: {
 	        	data1: "step"
 	        }
+	    },
+	    axis: {
+	    	x: {
+	    		tick: {
+	    			//TODO: Get x ticks as input
+	    			values: calculateXTicks(12)
+	    		}
+	    	}
 	    }
 	};
 
 	console.debug("c3args", c3args);
 	var chart = c3.generate(c3args);
+}
+
+function calculateXTicks(lengthOfExprimentInDays) {
+	var ticks = [];
+	for (var i=1; i<= lengthOfExprimentInDays; i++) {
+		ticks.push(i);
+	}
+	return ticks;
 }
 
 function getRandomData() {
@@ -91,7 +107,7 @@ function submitForm(formObj) {
 		var timeSeries = getInput("time" + i);
 		dataSet["data"] = dataSeries.val().split(",");
 		dataSet["time"] = timeSeries.val().split(",");
-		console.log(dataSeries.val().split(","))
+		console.log(dataSeries.val().split(","));
 		dataSets.push(dataSet);
 	}
 	data["dataSets"] = dataSets;
