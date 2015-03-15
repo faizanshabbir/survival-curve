@@ -30,6 +30,11 @@ function plotSurvival(json) {
 	    			//TODO: Get x ticks as input
 	    			values: calculateXTicks(12)
 	    		}
+	    	},
+	    	y: {
+	    		min: 0,
+	    		max: 1,
+	    		padding: { top: 0, bottom: 0}
 	    	}
 	    }
 	};
