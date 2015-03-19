@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Survival Curve</title>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'photon/css/skel.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'photon/css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'photon/css/style-xlarge.css' %}" />
+        <script src="{% static 'photon/js/jquery.min.js' %}"></script>
+        <script src="{% static 'photon/js/jquery.scrolly.min.js' %}"></script>
+        <script src="{% static 'photon/js/skel.min.js' %}"></script>
+        <script src="{% static 'photon/js/init.js' %}"></script>
+        <script src="{% static 'js/survival.js' %}" charset="utf-8"></script>
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <section id="header">
+            <div class="inner">
+                <span class="icon major fa-cloud"></span>
+                <h1>Hi, We're <strong>KM Survival</strong>, a team dedicated<br />
+                    to make you survive your curve analysis.</h1>
+                    <p>Unlike your patients,<br />
+                        who are probably all dead.</p>
+                        <ul class="actions">
+                            <li><a href="#one" class="button scrolly">Discover</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- One -->
+            <section id="one" class="main style1">
+                <div class="container">
+                    <div class="row 150%">
+                        <div class="6u 12u$(medium)">
+                            <header class="major">
+                                <h2>We make it simple.</h2>
+                            </header>
+                            <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+                        </div>
+                        <div class="6u$ 12u$(medium) important(medium)">
+                            <span class="image fit"><img src="{% static 'photon/images/pic01.jpg' %}" alt="" /></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>        
+    </body>
+</html>

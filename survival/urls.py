@@ -8,6 +8,7 @@ urlpatterns = patterns('',
 	url(r'^input_data$', views.input_data),
 	url(r'^humza_input$', views.humza_input),
 	url(r'^generate_curve$',views.generate_curve),
+	url(r'^base_dev$',views.dev_photon_html),
 	url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
 	url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
 )
