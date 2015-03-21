@@ -1,5 +1,5 @@
 function serverJsonToPlottable(results) {
-	console.debug("serverJsonToPlottable", results);
+	// console.debug("serverJsonToPlottable", results);
 	var datasets = results.map(function(result) {
 		return JSON.parse(result);
 	});
@@ -37,7 +37,7 @@ function flattenSingleValueArrays(singleValueArrays) {
 }
 
 function plotSurvival(plottableData) {
-	console.debug("Plottable json", plottableData);
+	// console.debug("Plottable json", plottableData);
 	var c3args = {
 	    data: {
 	        xs: plottableData.xs,
@@ -60,7 +60,7 @@ function plotSurvival(plottableData) {
 	    }
 	};
 
-	console.debug("c3args", c3args);
+	// console.debug("c3args", c3args);
 	var chart = c3.generate(c3args);
 }
 
@@ -73,7 +73,7 @@ function calculateXTicks(lengthOfExprimentInDays) {
 }
 
 function getRandomData() {
-	console.debug("getRandomData");
+	// console.debug("getRandomData");
 	$.ajax({
 		type: "GET",
 		url: "/random_data",
@@ -114,7 +114,7 @@ function getFormData($form) {
  * @param  {jQuery Object} formObj form jQuery object
  */
 function submitForm(formObj) {
-	console.debug("submitForm", formObj);
+	// console.debug("submitForm", formObj);
 	var data = {};
 	//Integer inputs
 	var integerInputs = ['numberOfGroups', 'samplesInGroup', 'lengthOfExprimentInDays'];
@@ -187,8 +187,8 @@ function submitData() {
 
 	data["dataSets"] = dataSets;
 	
-	console.log(data);
-	console.log(JSON.stringify(data));
+	// console.log(data);
+	// console.log(JSON.stringify(data));
 	//return jsonFormattedData;
 	$.ajax({
         type: "POST",
