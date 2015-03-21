@@ -1,28 +1,49 @@
-function serverJsonToPlottable(json) {
-	console.debug("serverJsonToPlottable", json);
-	var x = json.index;
-	var y = json.data.map(function (singleArray) {
-		return singleArray[0];
+function serverJsonToPlottable(results) {
+	console.debug("serverJsonToPlottable", results);
+	var datasets = results.map(function(result) {
+		return JSON.parse(result);
 	});
-	plotSurvival({
-		x: x,
-		data1: y
+	
+	var plottableData = {};
+	plottableData.xs = {};
+	plottableData.columns = [];
+	plottableData.types = {};
+
+	datasets.forEach(function(dataset, i) {
+		//Get Data
+		var x = dataset.index;
+		var y = flattenSingleValueArrays(dataset.data);
+		//Create Names
+		var xName = "x" + i;
+		var yName = "data" + i;
+		//Add X axis mapping
+		plottableData.xs[yName] = xName;
+		//Add x and y columns
+		var xcolumn = [xName].concat(x);
+		var ycolumn = [yName].concat(y);
+		plottableData.columns.push(xcolumn);
+		plottableData.columns.push(ycolumn);
+		//Add types
+		plottableData.types[yName] = "step";
+	});
+
+	plotSurvival(plottableData);
+}
+
+function flattenSingleValueArrays(singleValueArrays) {
+	return singleValueArrays.map(function(singleValueArray) {
+		return singleValueArray[0];
 	});
 }
 
-function plotSurvival(json) {
-	console.debug("Plottable json", json);
+function plotSurvival(plottableData) {
+	console.debug("Plottable json", plottableData);
 	var c3args = {
 	    data: {
-	        x: 'x',
-	        columns: [
-	            ['x'].concat(json.x),
-	            ['data1'].concat(json.data1)
-	        ],
+	        xs: plottableData.xs,
+	        columns: plottableData.columns,
 	        //Line curve is broken in Chrome, but step chart works
-	        types: {
-	        	data1: "step"
-	        }
+	        types: plottableData.types
 	    },
 	    axis: {
 	    	x: {
@@ -117,7 +138,21 @@ function submitForm(formObj) {
 	}
 	data["dataSets"] = dataSets;
 	console.log(data);
-	console.log(JSON.stringify(data));
+	 
+	$.ajax({
+        method: "POST",
+        url: "/generate_curve",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        dataType: "json",
+        success: function(data) {
+        	console.debug("Post complete", data);
+        	serverJsonToPlottable(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+        	alert(textStatus + errorThrown);
+        }
+    });
 }
 
 function getInput(inputName) {
@@ -165,5 +200,4 @@ function submitData() {
         failure: function(errMsg){alert(errMsg);
         }
     });
-
 }
