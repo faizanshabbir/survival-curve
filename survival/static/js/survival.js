@@ -150,8 +150,13 @@ function submitForm(formObj) {
 		var dataSet = {};
 		var dataSeries = getInput("data" + i);
 		var timeSeries = getInput("time" + i);
+		var numSamples = getInput("samplesInGroup");
+		var exprLength = getInput("lengthOfExprimentInDays");
 		dataSet["data"] = dataSeries.val().split(",");
 		dataSet["time"] = timeSeries.val().split(",");
+		dataSet["samplesInGroup"] = numSamples.val();
+		dataSet["exprimentLength"] = exprLength.val();
+		dataSet["type"] = 2;
 		console.log(dataSeries.val().split(","));
 		dataSets.push(dataSet);
 	}
@@ -197,11 +202,13 @@ function submitData() {
 	var dataSet = {};
 	dataSet["time"] = time1;
 	dataSet["data"] = data1;
+	dataSet["type"] = 1;
 	dataSets.push(dataSet);
 
 	dataSet = {};
 	dataSet["time"] = time2;
 	dataSet["data"] = data2;
+	dataSet["type"] = 1;
 	dataSets.push(dataSet);
 
 	data["dataSets"] = dataSets;

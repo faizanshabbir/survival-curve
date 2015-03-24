@@ -6,6 +6,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
+
+	<script type="text/javascript">
+		$(function() {
+		    $("form").on('submit', function(event) {
+		    	event.preventDefault();
+		    	submitForm($(this));
+		    });
+		  });
+	</script>
 {% endblock %}
 
 {% block banner %}
@@ -21,21 +30,62 @@
 			<p> Data Set 1 </p>
 			<tr>
 				<td class="defCol"></td>
-				<input type="text" name="time1" id="time1" value=""/>
+				<input type="text" name="time1" id="time1" value="" placeholder="Lifetime of each sample" />
 				<td class="defCol"></td>
-				<input type="text" name="data1" id="data1" value=""/>
+				<input type="text" name="data1" id="data1" value="" placeholder="Whether each sample died (1) or lived (0)"/>
 			</tr>
 			<br>
 			<p> Data Set 2 </p>
 			<tr>
 				<td class="defCol"></td>
-				<input type="text" name="time2" id="time2" value=""/>
+				<input type="text" name="time2" id="time2" value="" placeholder="Lifetime of each sample" />
 				<td class="defCol"></td>
-				<input type="text" name="data2" id="data2" value=""/>
+				<input type="text" name="data2" id="data2" value="" placeholder="Whether each sample died (1) or lived (0)"/>
 			</tr>
 		</table>
 	</form>
-	<button type = "button" onclick="submitData()">Submit</button>
+	<button type = "button" onclick="submitData()">Generate Curve</button>
+
+	<div id="chart"></div>
+
+	<br>
+	<br>
+
+	<form action="">
+		<table>
+			<tr>
+				<td>Number of groups:</td>
+				<td><input type="text" name="numberOfGroups"></td>
+			</tr>
+			<tr>
+				<td>Length of experiment (days):</td>
+				<td><input type="text" name="lengthOfExprimentInDays"></td>
+			</tr>
+			<tr>
+				<td>Group 1</td>
+			</tr>
+			<tr>
+				<td>Number of Samples:</td>
+				<td><input type="text" name="samplesInGroup"></td>
+			</tr>
+			<tr>
+				<td>Data Series:</td>
+				<td><input type="text" name="data1" placeholder="Time of Death"></td>
+			</tr>
+			<tr>
+				<td>Group 2</td>
+			</tr>
+			<tr>
+				<td>Number of Samples:</td>
+				<td><input type="text" name="samplesInGroup"></td>
+			</tr>
+			<tr>
+				<td>Data Series:</td>
+				<td><input type="text" name="data2" placeholder="When each death"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Generate Curve">
+	</form>
 
 	<div id="chart"></div>
 	</div>
