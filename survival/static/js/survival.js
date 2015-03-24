@@ -1,33 +1,52 @@
+function saveSvgAsFile() {
+	var canvasElement = document.createElement('canvas');
+	canvasElement.setAttribute('id', 'canvas');
+	document.body.appendChild(canvasElement);
+	canvg('canvas', $("#chart svg")[0].innerHTML);
+	var img = canvasElement.toDataURL("image/png");
+	document.write('<img src="' + img + '"/>');
+}
+
 function serverJsonToPlottable(results) {
 	// console.debug("serverJsonToPlottable", results);
-	var datasets = results.map(function(result) {
-		return JSON.parse(result);
-	});
 	
 	var plottableData = {};
 	plottableData.xs = {};
 	plottableData.columns = [];
 	plottableData.types = {};
-
-	datasets.forEach(function(dataset, i) {
-		//Get Data
-		var x = dataset.index;
-		var y = flattenSingleValueArrays(dataset.data);
-		//Create Names
-		var xName = "x" + i;
-		var yName = "data" + i;
-		//Add X axis mapping
-		plottableData.xs[yName] = xName;
-		//Add x and y columns
-		var xcolumn = [xName].concat(x);
-		var ycolumn = [yName].concat(y);
-		plottableData.columns.push(xcolumn);
-		plottableData.columns.push(ycolumn);
-		//Add types
-		plottableData.types[yName] = "step";
-	});
+	
+	//XXX: Result should always be an array, this is temp
+	//If result is an object instead of array, no need to loop
+	if (typeof results == "object") {
+		singleResultToPlottable(plottableData, results, 0);
+	} else {
+		var datasets = results.map(function(result) {
+			return JSON.parse(result);
+		});
+		datasets.forEach(function(dataset, index) {
+			singleResultToPlottable(plottableData, dataset, index);
+		});
+	}
 
 	plotSurvival(plottableData);
+}
+
+function singleResultToPlottable(plottableData, dataset, index) {
+	//Get Data
+	var x = dataset.index;
+	var y = flattenSingleValueArrays(dataset.data);
+	//Create Names
+	var xName = "x" + index;
+	var yName = "data" + index;
+	//Add X axis mapping
+	plottableData.xs[yName] = xName;
+	//Add x and y columns
+	var xcolumn = [xName].concat(x);
+	var ycolumn = [yName].concat(y);
+	plottableData.columns.push(xcolumn);
+	plottableData.columns.push(ycolumn);
+	//Add types
+	plottableData.types[yName] = "step";
 }
 
 function flattenSingleValueArrays(singleValueArrays) {

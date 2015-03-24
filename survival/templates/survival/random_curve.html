@@ -5,9 +5,23 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
+
+	<!-- Save functionality -->
+	<script type="text/javascript" src="http://gabelerner.github.io/canvg/rgbcolor.js"></script> 
+	<script type="text/javascript" src="http://gabelerner.github.io/canvg/StackBlur.js"></script>
+	<script type="text/javascript" src="http://gabelerner.github.io/canvg/canvg.js"></script> 
+
+	<script type="text/javascript">
+		$(function() {
+		    $("#save").on('click', function() {
+		    	saveSvgAsFile();
+		    });
+		  });
+	</script>
 {% endblock %}
 
 {% block content %}
 	<input type="button" value="Random Survival"/ onclick="getRandomData()">
 	<div id="chart"></div>
+	<button id="save">Save</button>
 {% endblock %}
