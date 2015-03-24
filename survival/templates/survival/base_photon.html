@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Survival Curve</title>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'photon/css/skel.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'photon/css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'photon/css/style-xlarge.css' %}" />
+        <script src="{% static 'photon/js/jquery.min.js' %}"></script>
+        <script src="{% static 'photon/js/jquery.scrolly.min.js' %}"></script>
+        <script src="{% static 'photon/js/skel.min.js' %}"></script>
+        <script src="{% static 'photon/js/init.js' %}"></script>
+        <script src="{% static 'js/survival.js' %}" charset="utf-8"></script>
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <section id="header">
+        <!-- Nav -->
+<!--                        <nav id="nav">
+                            <ul>
+                                <a href="index.html">Home</a>
+                                <a href="left-sidebar.html">Left Sidebar</a>
+                                <a href="right-sidebar.html">Right Sidebar</a>
+                                <a href="no-sidebar.html">No Sidebar</a>
+                            </ul>
+                        </nav>
+ -->
+            <div class="inner">
+                {% block banner %}
+                {% endblock %}
+            </div>
+        </section>
+        {% block content %}
+        {% endblock %}   
+    </body>
+</html>

@@ -1,4 +1,4 @@
-{% extends 'survival/base.html' %}
+{% extends 'survival/base_photon.html' %}
 
 {% block head %}
 	<title>Survival Curve</title>
@@ -8,8 +8,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
 {% endblock %}
 
+{% block banner %}
+	<h1>Making Survival Curve plotting easy.</h1>
+{% endblock %}
+
 
 {% block content %}
+	<section id="one" class="main style1">
+    <div class="container">
 	<form name="data">
 		<table>
 			<p> Data Set 1 </p>
@@ -32,4 +38,6 @@
 	<button type = "button" onclick="submitData()">Submit</button>
 
 	<div id="chart"></div>
+	</div>
+    </section>
 {% endblock %}

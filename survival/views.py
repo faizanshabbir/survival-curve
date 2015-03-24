@@ -30,6 +30,3 @@ def generate_curve(request):
             json.dumps({"nothing to see": "here"}),
             content_type="application/json"
         )
-
-def dev_photon_html(request):
-	return render(request, 'survival/base_dev.html')
