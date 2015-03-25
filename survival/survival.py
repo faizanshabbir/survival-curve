@@ -22,6 +22,7 @@ def survival_data_to_json(data):
 	return json_string
 
 def dataset_to_lifelines(dataset):
+	print dataset['type']
 	if dataset['type'] == 1:
 		time = dataset['time']
 		data = dataset['data']
@@ -37,17 +38,26 @@ def dataset_to_lifelines(dataset):
 		#convert death array into boolean array required for pipelines
 		data = data.astype(bool)
 	else:
-		time = dataset['time']
+		time = dataset['data']
 		time = np.array(map(float,time))
 		time = np.sort(time)
+		currDataLen = len(np.atleast_1d(time))
 
-		experimentLength = dataset['experimentLength']
-		numSamples = dataset['samplesInGroup']
+		experimentLength = int(dataset['experimentLength'])
+		numSamples = int(dataset['samplesInGroup'])
+		diff = numSamples - currDataLen
+
+		arrToAppend = np.ones(diff)
+		arrToAppend = arrToAppend*int(experimentLength)
+		time = np.concatenate((time,arrToAppend), axis = 1)
+
+		data = np.ones(currDataLen)
+		livingAppend = np.ones(diff)
+		data = np.concatenate((data,livingAppend), axis = 1)
 	return data, time
 
 def generate_curve(data):
 	dataSets = data['dataSets']
-
 	results = list()
 
 	for dataset in dataSets:

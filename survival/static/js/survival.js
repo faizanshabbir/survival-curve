@@ -148,14 +148,12 @@ function submitForm(formObj) {
 	var dataSets = [];
 	for (var i=1; i <= data.numberOfGroups; i++) {
 		var dataSet = {};
-		var dataSeries = getInput("data" + i);
-		var timeSeries = getInput("time" + i);
+		var dataSeries = getInput("type2_data" + i);
 		var numSamples = getInput("samplesInGroup");
 		var exprLength = getInput("lengthOfExprimentInDays");
 		dataSet["data"] = dataSeries.val().split(",");
-		dataSet["time"] = timeSeries.val().split(",");
 		dataSet["samplesInGroup"] = numSamples.val();
-		dataSet["exprimentLength"] = exprLength.val();
+		dataSet["experimentLength"] = exprLength.val();
 		dataSet["type"] = 2;
 		console.log(dataSeries.val().split(","));
 		dataSets.push(dataSet);
