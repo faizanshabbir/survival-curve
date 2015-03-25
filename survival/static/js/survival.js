@@ -17,7 +17,7 @@ function serverJsonToPlottable(results) {
 	
 	//XXX: Result should always be an array, this is temp
 	//If result is an object instead of array, no need to loop
-	if (typeof results == "object") {
+	if (!$.isArray(results)) {
 		singleResultToPlottable(plottableData, results, 0);
 	} else {
 		var datasets = results.map(function(result) {

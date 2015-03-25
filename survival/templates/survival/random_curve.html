@@ -1,4 +1,4 @@
-{% extends 'survival/base.html' %}
+{% extends 'survival/base_photon.html' %}
 
 {% block head %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.js"></script>
@@ -24,4 +24,5 @@
 	<input type="button" value="Random Survival"/ onclick="getRandomData()">
 	<div id="chart"></div>
 	<button id="save">Save</button>
+	<img id="output" src="">
 {% endblock %}
