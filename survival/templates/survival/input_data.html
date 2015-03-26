@@ -13,11 +13,12 @@
 
 	<script type="text/javascript">
 		$(function() {
-		    $("form").on('submit', function(event) {
-		    	event.preventDefault();
-		    	submitForm($(this));
-		    });
-		  });
+			$( "form.input-form1" ).submit(function( event ) {
+			  alert( "Handler for .submit() called." );
+			  event.preventDefault();
+			  submitForm($(this));
+			});
+		});
 
 		//$('#tab-container').tabs();
 		$(function() {
@@ -41,7 +42,8 @@
                 <li class='tab'><a href="#tabs1-type2">Data Input Format 2</a></li>
             </ul>
             <div id="tabs1-type1">
-                <form class="input-form2" action="">
+                <form class="input-form1" action="">
+                	<input type="hidden" name="numberOfGroups" value="2">
                     <table>
 <!--                         <tr>
                             <td>Number of groups:</td>
@@ -114,9 +116,9 @@
                     </table>
                 </form>
                 <button type="button" onclick="submitData()">Generate Curve</button>
-                <div id="chart"></div>
             </div>
         </div>
+        <div id="chart"></div>
 </section>
 
 {% endblock %}
