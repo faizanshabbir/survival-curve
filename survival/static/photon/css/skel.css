@@ -18,7 +18,8 @@
 
 		/* width: (containers) */
 		width: 60em;
-	}
+		font-size: 11pt; /*hack soln*/
+  	}
 
 	/* Modifiers */
 
