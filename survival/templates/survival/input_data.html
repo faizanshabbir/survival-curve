@@ -33,84 +33,90 @@
 
 
 {% block content %}
-	<section id="one" class="main style1">
-	<div class="container">
-	
-	<div id="tab-container" class="module_bg">
-	<ul class='shadetabs'>
-    	<li class='tab'><a href="#tabs1-type1">Type 1 Data</a></li>
-    	<li class='tab'><a href="#tabs1-type2">Type 2 Data</a></li>
-  	</ul>
+<section id="one" class="main style1">
+    <div class="container">
+        <div id="tab-container" class="module_bg">
+            <ul class='shadetabs'>
+                <li class='tab'><a href="#tabs1-type1">Data Input Format 1</a></li>
+                <li class='tab'><a href="#tabs1-type2">Data Input Format 2</a></li>
+            </ul>
+            <div id="tabs1-type1">
+                <form class="input-form2" action="">
+                    <table>
+<!--                         <tr>
+                            <td>Number of groups:</td>
+                            <td>
+                                <input type="text" name="numberOfGroups">
+                            </td>
+                        </tr> -->
+                        <tr>
+                            <td>Length of experiment (days):</td>
+                            <td>
+                                <input type="text" name="lengthOfExprimentInDays">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Group 1</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Number of Samples:</td>
+                            <td>
+                                <input type="text" name="samplesInGroup">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Data Series:</td>
+                            <td>
+                                <input type="text" name="type2_data1" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Group 2</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Number of Samples:</td>
+                            <td>
+                                <input type="text" name="samplesInGroup">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Data Series:</td>
+                            <td>
+                                <input type="text" name="type2_data2" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Generate Curve">
+                </form>
+            </div>
+            <br>
+            <br>
+            <div id="tabs1-type2">
+                <form name="data">
+                    <table>
+                        <p> Data Set 1 </p>
+                        <tr>
+                            <td class="defCol"></td>
+                            <input type="text" name="time1" id="time1" value="" placeholder="Lifetime of each sample" />
+                            <td class="defCol"></td>
+                            <input type="text" name="data1" id="data1" value="" placeholder="Whether each sample died (1) or lived (0)" />
+                        </tr>
+                        <br>
+                        <p> Data Set 2 </p>
+                        <tr>
+                            <td class="defCol"></td>
+                            <input type="text" name="time2" id="time2" value="" placeholder="Lifetime of each sample" />
+                            <td class="defCol"></td>
+                            <input type="text" name="data2" id="data2" value="" placeholder="Whether each sample died (1) or lived (0)" />
+                        </tr>
+                    </table>
+                </form>
+                <button type="button" onclick="submitData()">Generate Curve</button>
+                <div id="chart"></div>
+            </div>
+        </div>
+</section>
 
-  	<div id="tabs1-type1">
-	<form name="data">
-		<table>
-			<p> Data Set 1 </p>
-			<tr>
-				<td class="defCol"></td>
-				<input type="text" name="time1" id="time1" value="" placeholder="Lifetime of each sample" />
-				<td class="defCol"></td>
-				<input type="text" name="data1" id="data1" value="" placeholder="Whether each sample died (1) or lived (0)"/>
-			</tr>
-			<br>
-			<p> Data Set 2 </p>
-			<tr>
-				<td class="defCol"></td>
-				<input type="text" name="time2" id="time2" value="" placeholder="Lifetime of each sample" />
-				<td class="defCol"></td>
-				<input type="text" name="data2" id="data2" value="" placeholder="Whether each sample died (1) or lived (0)"/>
-			</tr>
-		</table>
-	</form>
-	<button type = "button" onclick="submitData()">Generate Curve</button>
-
-	<div id="chart"></div>
-	</div>
-
-	<br>
-	<br>
-
-	<div id="tabs1-type2">
-	<form action="">
-		<table>
-			<tr>
-				<td>Number of groups:</td>
-				<td><input type="text" name="numberOfGroups"></td>
-			</tr>
-			<tr>
-				<td>Length of experiment (days):</td>
-				<td><input type="text" name="lengthOfExprimentInDays"></td>
-			</tr>
-			<tr>
-				<td>Group 1</td>
-			</tr>
-			<tr>
-				<td>Number of Samples:</td>
-				<td><input type="text" name="samplesInGroup"></td>
-			</tr>
-			<tr>
-				<td>Data Series:</td>
-				<td><input type="text" name="type2_data1" placeholder="Time of each death"></td>
-			</tr>
-			<tr>
-				<td>Group 2</td>
-			</tr>
-			<tr>
-				<td>Number of Samples:</td>
-				<td><input type="text" name="samplesInGroup"></td>
-			</tr>
-			<tr>
-				<td>Data Series:</td>
-				<td><input type="text" name="type2_data2" placeholder="Time of each death"></td>
-			</tr>
-		</table>
-		<input type="submit" value="Generate Curve">
-	</form>
-
-	<div id="chart"></div>
-	</div>
-
-	</div>
-	</div>
-    </section>
 {% endblock %}
