@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		$(function() {
 			$( "form.input-form1" ).submit(function( event ) {
-			  alert( "Handler for .submit() called." );
+			  // alert( "Handler for .submit() called." );
 			  event.preventDefault();
 			  submitForm($(this));
 			});
@@ -36,6 +36,8 @@
 {% block content %}
 <section id="one" class="main style1">
     <div class="container">
+	    <div id="chart"></div>
+
         <div id="tab-container" class="module_bg">
             <ul class='shadetabs'>
                 <li class='tab'><a href="#tabs1-type1">Data Input Format 1</a></li>
@@ -118,7 +120,6 @@
                 <button type="button" onclick="submitData()">Generate Curve</button>
             </div>
         </div>
-        <div id="chart"></div>
 </section>
 
 {% endblock %}
