@@ -52,7 +52,7 @@ def dataset_to_lifelines(dataset):
 		time = np.concatenate((time,arrToAppend), axis = 1)
 
 		data = np.ones(currDataLen)
-		livingAppend = np.ones(diff)
+		livingAppend = np.zeros(diff)
 		data = np.concatenate((data,livingAppend), axis = 1)
 	return data, time
 
