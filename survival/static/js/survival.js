@@ -7,13 +7,14 @@ function saveSvgAsFile() {
 	document.write('<img src="' + img + '"/>');
 }
 
-function serverJsonToPlottable(results) {
+function serverJsonToPlottable(results, data) {
 	// console.debug("serverJsonToPlottable", results);
 	
 	var plottableData = {};
 	plottableData.xs = {};
 	plottableData.columns = [];
 	plottableData.types = {};
+	plottableData.lengthOfExprimentInDays = data.lengthOfExprimentInDays;
 	
 	//XXX: Result should always be an array, this is temp
 	//If result is an object instead of array, no need to loop
@@ -24,20 +25,20 @@ function serverJsonToPlottable(results) {
 			return JSON.parse(result);
 		});
 		datasets.forEach(function(dataset, index) {
-			singleResultToPlottable(plottableData, dataset, index);
+			singleResultToPlottable(plottableData, data, dataset, index);
 		});
 	}
 
 	plotSurvival(plottableData);
 }
 
-function singleResultToPlottable(plottableData, dataset, index) {
+function singleResultToPlottable(plottableData, data, dataset, index) {
 	//Get Data
 	var x = dataset.index;
 	var y = flattenSingleValueArrays(dataset.data);
 	//Create Names
 	var xName = "x" + index;
-	var yName = "data" + index;
+	var yName = data["name" + (index + 1)] || "data" + index;
 	//Add X axis mapping
 	plottableData.xs[yName] = xName;
 	//Add x and y columns
@@ -66,9 +67,14 @@ function plotSurvival(plottableData) {
 	    },
 	    axis: {
 	    	x: {
+    			max: parseInt(plottableData.lengthOfExprimentInDays, 10),
+    			min: 0,
 	    		tick: {
 	    			//TODO: Get x ticks as input
-	    			values: calculateXTicks(12)
+	    			// values: calculateXTicks(plottableData.lengthOfExprimentInDays),
+	    			culling: {
+	    				max: 10
+	    			}
 	    		}
 	    	},
 	    	y: {
@@ -136,12 +142,11 @@ function submitForm(formObj) {
 	// console.debug("submitForm", formObj);
 	var data = {};
 	//Integer inputs
-	var integerInputs = ['numberOfGroups', 'samplesInGroup', 'lengthOfExprimentInDays'];
+	var integerInputs = ['numberOfGroups', 'samplesInGroup', 'lengthOfExprimentInDays', 'name1', 'name2'];
 	integerInputs.forEach(function(inputName) {
 		var input = getInput(inputName);
-		var name = input.attr('name');
 		var value = input.val();
-		data[name] = value;
+		data[inputName] = value;
 	});
 	console.log(data);
 	//Data sets
@@ -167,9 +172,9 @@ function submitForm(formObj) {
         data: JSON.stringify(data),
         contentType: "application/json",
         dataType: "json",
-        success: function(data) {
-        	console.debug("Post complete", data);
-        	serverJsonToPlottable(data);
+        success: function(results) {
+        	console.debug("Post complete", results);
+        	serverJsonToPlottable(results, data);
         },
         error: function(jqXHR, textStatus, errorThrown){
         	alert(textStatus + errorThrown);

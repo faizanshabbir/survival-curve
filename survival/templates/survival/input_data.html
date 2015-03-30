@@ -3,22 +3,20 @@
 {% block head %}
 	<title>Survival Curve</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js" charset="utf-8"></script>
 
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
 	<script type="text/javascript">
-		$(function() {
-			$( "form.input-form1" ).submit(function( event ) {
-			  // alert( "Handler for .submit() called." );
-			  event.preventDefault();
-			  submitForm($(this));
-			});
-		});
+		// $(function() {
+		// 	$( "form.input-form1" ).submit(function( event ) {
+		// 	  // alert( "Handler for .submit() called." );
+		// 	  event.preventDefault();
+		// 	  submitForm($(this));
+		// 	});
+		// });
 
 		//$('#tab-container').tabs();
 		$(function() {
@@ -44,7 +42,7 @@
                 <li class='tab'><a href="#tabs1-type2">Data Input Format 2</a></li>
             </ul>
             <div id="tabs1-type1">
-                <form class="input-form1" action="">
+                <form id="input-form1">
                 	<input type="hidden" name="numberOfGroups" value="2">
                     <table>
 <!--                         <tr>
@@ -64,6 +62,10 @@
                             <td></td>
                         </tr>
                         <tr>
+                            <td>Group Label:</td>
+                            <td><input type="text" name="name1"></td>
+                        </tr>
+                        <tr>
                             <td>Number of Samples:</td>
                             <td>
                                 <input type="text" name="samplesInGroup">
@@ -80,6 +82,10 @@
                             <td></td>
                         </tr>
                         <tr>
+                            <td>Group Label:</td>
+                            <td><input type="text" name="name2"></td>
+                        </tr>
+                        <tr>
                             <td>Number of Samples:</td>
                             <td>
                                 <input type="text" name="samplesInGroup">
@@ -92,7 +98,8 @@
                             </td>
                         </tr>
                     </table>
-                    <input type="submit" value="Generate Curve">
+                    <!-- <input type="submit" value="Generate Curve"> -->
+                    <button type="button" onclick="submitForm($('#input-form1'))">Generate Curve</button>
                 </form>
             </div>
             <br>
@@ -102,17 +109,17 @@
                     <table>
                         <p> Data Set 1 </p>
                         <tr>
-                            <td class="defCol"></td>
+                            <!-- <td class="defCol"></td> -->
                             <input type="text" name="time1" id="time1" value="" placeholder="Lifetime of each sample" />
-                            <td class="defCol"></td>
+                            <!-- <td class="defCol"></td> -->
                             <input type="text" name="data1" id="data1" value="" placeholder="Whether each sample died (1) or lived (0)" />
                         </tr>
                         <br>
                         <p> Data Set 2 </p>
                         <tr>
-                            <td class="defCol"></td>
+                            <!-- <td class="defCol"></td> -->
                             <input type="text" name="time2" id="time2" value="" placeholder="Lifetime of each sample" />
-                            <td class="defCol"></td>
+                            <!-- <td class="defCol"></td> -->
                             <input type="text" name="data2" id="data2" value="" placeholder="Whether each sample died (1) or lived (0)" />
                         </tr>
                     </table>
