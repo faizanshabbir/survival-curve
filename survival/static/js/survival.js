@@ -71,10 +71,10 @@ function plotSurvival(plottableData) {
     			min: 0,
 	    		tick: {
 	    			//TODO: Get x ticks as input
-	    			// values: calculateXTicks(plottableData.lengthOfExprimentInDays),
-	    			culling: {
-	    				max: 10
-	    			}
+	    			values: calculateXTicks(plottableData.lengthOfExprimentInDays),
+	    			//culling: {
+	    			//	max: 10
+	    			//}
 	    		}
 	    	},
 	    	y: {
@@ -91,8 +91,13 @@ function plotSurvival(plottableData) {
 
 function calculateXTicks(lengthOfExprimentInDays) {
 	var ticks = [];
-	for (var i=1; i<= lengthOfExprimentInDays; i++) {
-		ticks.push(i);
+	var numTicks = 10;
+	var incrementNum = lengthOfExprimentInDays / numTicks;
+	var currTick = 0;
+	ticks.push(currTick)
+	for (var i=0; i<= numTicks+1; i++) {
+		currTick = currTick + incrementNum;
+		ticks.push(Math.round(currTick));
 	}
 	return ticks;
 }
