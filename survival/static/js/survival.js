@@ -68,6 +68,7 @@ function plotSurvival(plottableData) {
 	    axis: {
 	    	x: {
     			max: parseInt(plottableData.lengthOfExprimentInDays, 10),
+    			//max: Math.ceil(parseInt(plottableData.lengthOfExprimentInDays, 10)/10)*10,
     			min: 0,
 	    		tick: {
 	    			//TODO: Get x ticks as input
@@ -89,15 +90,25 @@ function plotSurvival(plottableData) {
 	var chart = c3.generate(c3args);
 }
 
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+
 function calculateXTicks(lengthOfExprimentInDays) {
 	var ticks = [];
 	var numTicks = 10;
+	var threshRound = 250;
 	var incrementNum = lengthOfExprimentInDays / numTicks;
+	var testnum = Math.ceil(lengthOfExprimentInDays/10)*10
+	var incrementNum = testnum / numTicks;
 	var currTick = 0;
 	ticks.push(currTick)
-	for (var i=0; i<= numTicks+1; i++) {
+	for (var i=0; i<= numTicks; i++) {
 		currTick = currTick + incrementNum;
-		ticks.push(Math.round(currTick));
+		if(lengthOfExprimentInDays>threshRound)
+			ticks.push(round(currTick,0));
+		else
+			ticks.push(round(currTick,1));
 	}
 	return ticks;
 }
