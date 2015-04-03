@@ -6,6 +6,9 @@ import json
 def home(request):
 	return render(request, 'survival/home.html')
 
+def survey(request):
+	return render(request, 'survival/survey.html')
+
 def random_curve(request):
 	return render(request, 'survival/random_curve.html')
 
