@@ -10,6 +10,7 @@ urlpatterns = patterns('',
 	url(r'^humza_input$', views.humza_input),
 	url(r'^generate_curve$',views.generate_curve),
 	url(r'^login$', 'django.contrib.auth.views.login'),
-	url(r'^logout$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+	url(r'^login_form$', views.user_login),
+	url(r'^logout$', views.user_logout),
 	url(r'^register$', views.register),
 )
