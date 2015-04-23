@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib import auth
+from models import subscribeList
 
 def home(request):
 	return render(request, 'survival/home.html')
@@ -96,3 +97,18 @@ def user_login(request):
 
 def user_logout(request):
 	return render(request, 'survival/humza_input.html')
+
+def subscribe(request):
+
+	context = RequestContext(request)
+
+	if request.method == 'POST':
+		name = request.POST['personalName']
+		email = request.POST['emailAddress']
+		c = subscribeList.objects.create(name=name, email=email)
+		c.save()
+		return HttpResponse("Subscribed Successfully!")
+
+	return HttpResponse("Error. Unable to subscribe.")
+
+
