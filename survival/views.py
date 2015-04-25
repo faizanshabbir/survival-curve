@@ -110,7 +110,7 @@ def subscribe(request):
 		name = request.POST['personalName']
 		email = request.POST['emailAddress']
 		list = utils.get_connection().get_list_by_id(MAILCHIMP_LIST_ID)
-        list.subscribe(email_address, {'EMAIL': email_address, 'FNAME': name})
+		list.subscribe(email, {'EMAIL': email})
 		return HttpResponse("Subscribed Successfully!")
 	else:
 		return HttpResponse("Error. Unable to subscribe.")
