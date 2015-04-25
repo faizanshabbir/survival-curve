@@ -14,5 +14,6 @@ urlpatterns = patterns('',
 	url(r'^login_form$', views.user_login),
 	url(r'^logout$', views.user_logout),
 	url(r'^register$', views.register),
-	url(r'^subscribe$', views.subscribe)
+	url(r'^subscribe$', views.subscribe),
+	url(r'^home_telephasic$',views.home_telephasic)
 )

@@ -15,6 +15,9 @@ MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
 def home(request):
 	return render(request, 'survival/home.html')
 
+def home_telephasic(request):
+	return render(request, 'survival/home_telephasic.html')
+
 def survey(request):
 	return render(request, 'survival/survey.html')
 
