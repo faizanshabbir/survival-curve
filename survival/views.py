@@ -8,6 +8,10 @@ from django.template import RequestContext
 from django.contrib import auth
 from models import subscribeList
 
+from mailchimp import utils
+MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
+
+
 def home(request):
 	return render(request, 'survival/home.html')
 
@@ -105,10 +109,8 @@ def subscribe(request):
 	if request.method == 'POST':
 		name = request.POST['personalName']
 		email = request.POST['emailAddress']
-		c = subscribeList.objects.create(name=name, email=email)
-		c.save()
+		list = utils.get_connection().get_list_by_id(MAILCHIMP_LIST_ID)
+        list.subscribe(email_address, {'EMAIL': email_address, 'FNAME': name})
 		return HttpResponse("Subscribed Successfully!")
-
-	return HttpResponse("Error. Unable to subscribe.")
-
-
+	else:
+		return HttpResponse("Error. Unable to subscribe.")

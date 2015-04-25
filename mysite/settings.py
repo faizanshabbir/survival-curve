@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'survival',
+    'mailchimp',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,3 +83,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Mailchimp API key
+MAILCHIMP_API_KEY = '98246088a8e0a9ba9ea1939878866899-us9'
