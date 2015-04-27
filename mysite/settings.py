@@ -69,7 +69,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-<<<<<<< HEAD
 # Dev vs production settings: 
 # Production settings are set to recognize host name survive-this-curve
 
@@ -104,7 +103,5 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-=======
 # Mailchimp API key
 MAILCHIMP_API_KEY = '98246088a8e0a9ba9ea1939878866899-us9'
->>>>>>> origin/master
