@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = patterns('',
 	url(r'^$', views.home),
+	url(r'^home$',views.home),
 	url(r'^input_data$', views.input_data),
 	url(r'^survey$', views.survey),
 	url(r'^random_curve$', views.random_curve),
@@ -15,5 +16,6 @@ urlpatterns = patterns('',
 	url(r'^logout$', views.user_logout),
 	url(r'^register$', views.register),
 	url(r'^subscribe$', views.subscribe),
-	url(r'^home_telephasic$',views.home_telephasic)
+	url(r'^home_telephasic$',views.home_telephasic),
+	url(r'^contact$',views.contact)
 )
