@@ -1,7 +1,8 @@
-{% extends 'survival/base_photon.html' %}
+{% extends 'survival/base_telephasic.html' %}
 
 {% block head %}
 	<title>Survival Curve</title>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.css">
@@ -27,12 +28,19 @@
 {% endblock %}
 
 {% block banner %}
-	<h1>Making Survival Curve plotting easy.</h1>
+<section id="hero" class="container">
+
+<br>
+<br>
+	<p>Making Survival Curve plotting easy.</p>
+</section>
 {% endblock %}
 
 
 {% block content %}
-<section id="one" class="main style1">
+    <br>
+    <br>
+    <section id="one" class="main style1">
     <div class="container">
 	    <div id="chart"></div>
 
@@ -127,6 +135,7 @@
                 <button type="button" onclick="submitData()">Generate Curve</button>
             </div>
         </div>
-</section>
+        </div>
+        </section>
 
 {% endblock %}
