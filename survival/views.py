@@ -123,3 +123,6 @@ def subscribe(request):
 
 def dev(request):
     return render(request, 'survival/home_crafty.html')
+
+def dev_about(request):
+    return render(request, 'survival/about_crafty.html')    
