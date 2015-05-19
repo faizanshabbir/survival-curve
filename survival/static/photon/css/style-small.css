@@ -75,6 +75,25 @@
 			margin: 2em 0 0 0;
 		}
 
+	#nav{
+		font-size: 0.9em;
+	}
+
+		#nav > ul
+		{
+		}
+
+			#nav > ul > li
+			{
+			}
+
+				#nav > ul > li > span,
+				#nav > ul > li > a
+				{
+					padding: 0.25em 0.5em 0.25em 0.5em;
+				}
+
+
 /* Footer */
 
 	#footer {

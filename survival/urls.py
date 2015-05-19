@@ -17,5 +17,6 @@ urlpatterns = patterns('',
 	url(r'^register$', views.register),
 	url(r'^subscribe$', views.subscribe),
 	url(r'^home_telephasic$',views.home_telephasic),
-	url(r'^contact$',views.contact)
+	url(r'^contact$',views.contact),
+	url(r'^dev$', views.dev)
 )

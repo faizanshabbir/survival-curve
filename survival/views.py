@@ -120,3 +120,6 @@ def subscribe(request):
 		return HttpResponse("Subscribed Successfully!")
 	else:
 		return HttpResponse("Error. Unable to subscribe.")
+
+def dev(request):
+    return render(request, 'survival/home_crafty.html')
