@@ -52,6 +52,7 @@
         width: 100%;
         line-height: 1.5em;
         padding: 1em;
+        margin: 0 0 10px 0 ;
         -moz-transition: background-color 0.25s ease-in-out;
         -webkit-transition: background-color 0.25s ease-in-out;
         -o-transition: background-color 0.25s ease-in-out;
@@ -103,7 +104,8 @@
         border: 0;
     }
 
-/* Button */
+
+/*  Button  */
 
     input[type="button"],
     input[type="submit"],
@@ -135,7 +137,8 @@
         border-color: #3C7CBD;
     }
 
-/*  Fonts  */
+
+/*  Fonts   */
     @font-face {
         font-family: 'lato_regular';
         src: url('../fonts/lato-regular.eot');
@@ -174,7 +177,8 @@
 
     }
 
-/*  Contact */
+
+/*  Contact     */
     .wrapper-contact-form{
         max-width: 66.66%;
         height: auto;
@@ -218,7 +222,7 @@
     }
 
 
-/*  General CSS*/
+/*  General CSS     */
     .wrapper{
         width: 100%;
     	max-width: 1200px;
@@ -241,7 +245,8 @@
     	-o-transition:all .2s linear;
     }
 
-/*Flexbox layout*/
+
+/*  Flexbox layout  */
 
     body {
         display: flex;
@@ -251,6 +256,15 @@
     .billboard {
         flex: 2;
     }
+
+    .testimonials {
+        flex: 3;
+    }
+
+    .info {
+        flex: 1;
+    }
+
 
 /*  header  */
     header{

@@ -13,10 +13,10 @@ MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
 
 
 def home(request):
-	return render(request, 'survival/home.html')
+	return render(request, 'survival/home_crafty.html')
 
 def contact(request):
-    return render(request, 'survival/contact.html')
+    return render(request, 'survival/contact_crafty.html')
 
 def home_telephasic(request):
 	return render(request, 'survival/home_telephasic.html')
@@ -24,21 +24,21 @@ def home_telephasic(request):
 def survey(request):
 	return render(request, 'survival/survey.html')
 
-def random_curve(request):
-	return render(request, 'survival/random_curve.html')
+def about(request):
+	return render(request, 'survival/about_crafty.html')
+
+def sign_up(request):
+    return render(request, 'survival/sign_up_crafty.html')
 
 def random_data(request):
-	data = survival.random_data()
-	return HttpResponse(data, content_type="application/json")
+    data = survival.random_data()
+    return HttpResponse(data, content_type="application/json")
 
 def input_data(request):
-	return render(request, 'survival/input_data.html')
+    return render(request, 'survival/input_data.html')
 
 def humza_input(request):
-	return render(request, 'survival/humza_input.html')
-
-def about(request):
-	return render(request, 'survival/about.html')
+    return render(request, 'survival/humza_input.html')
 
 def generate_curve(request):
 	
@@ -51,7 +51,6 @@ def generate_curve(request):
             json.dumps({"nothing to see": "here"}),
             content_type="application/json"
         )
-
 
 def register(request):
     if request.method == 'POST':
