@@ -121,10 +121,10 @@ def subscribe(request):
 		return HttpResponse("Error. Unable to subscribe.")
 
 def dev(request):
-    return render(request, 'survival/home_crafty.html')
+    return render(request, 'survival/home_crafty.html', {'page_name': 'home'})
 
 def dev_about(request):
-    return render(request, 'survival/about_crafty.html')    
+    return render(request, 'survival/about_crafty.html', {'page_name': 'about'})    
 
 def dev_contact(request):
-    return render(request, 'survival/contact_crafty.html')    
+    return render(request, 'survival/contact_crafty.html', {'page_name': 'contact'})    
