@@ -1,0 +1,51 @@
+{% extends 'survival/base_crafty.html' %}
+
+{% block head%}
+
+{% endblock%}
+
+{% block content %}
+<div class="wrapper">
+	<div class="row">
+		<div class="col-4">
+			<form method="post" action="#">
+				<div class="row">
+					<div class="col-3">
+						<input name="name" placeholder="Name" type="text" />
+					</div>
+					<div class="col-3">
+						<input name="email" placeholder="Email" type="text" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<textarea name="message" placeholder="Message"></textarea>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "col-6">
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+							<li><input type="reset" value="Clear form" /></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class = "col-2">
+			<li class="icon fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
+			<li class="icon fa-facebook"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
+			<!--<li class="icon fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>-->
+		<!--<ul class="divided icons 6u 12u(mobile)">
+		    <li class="icon fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
+		    <li class="icon fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+		    <li class="icon fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
+		</ul>-->
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

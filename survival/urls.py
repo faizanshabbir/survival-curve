@@ -19,5 +19,6 @@ urlpatterns = patterns('',
 	url(r'^home_telephasic$',views.home_telephasic),
 	url(r'^contact$',views.contact),
 	url(r'^dev$', views.dev),
-	url(r'^dev_about$', views.dev_about)
+	url(r'^dev_about$', views.dev_about),
+	url(r'^dev_contact$', views.dev_contact)
 )

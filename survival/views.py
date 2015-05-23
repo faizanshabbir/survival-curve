@@ -126,3 +126,6 @@ def dev(request):
 
 def dev_about(request):
     return render(request, 'survival/about_crafty.html')    
+
+def dev_contact(request):
+    return render(request, 'survival/contact_crafty.html')    

@@ -19,7 +19,121 @@
 	
 */
 
+/*   Form   */
 
+    form
+    {
+    }
+
+    form .actions
+    {
+        padding-top: 0;
+    }
+
+    form label
+    {
+        display: inline-block;
+        font-weight: 300;
+        color: #52575c;
+        margin: 0 0 0.5em 0;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form select,
+    form textarea
+    {
+        -webkit-appearance: none;
+        display: inline-block;
+        background: #f9fbfe;
+        border: solid 1px #d2d7dc;
+        border-radius: 0.35em;
+        width: 100%;
+        line-height: 1.5em;
+        padding: 1em;
+        -moz-transition: background-color 0.25s ease-in-out;
+        -webkit-transition: background-color 0.25s ease-in-out;
+        -o-transition: background-color 0.25s ease-in-out;
+        -ms-transition: background-color 0.25s ease-in-out;
+        transition: background-color 0.25s ease-in-out;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="password"]:focus,
+    form select:focus,
+    form textarea:focus
+    {
+        background: #fff;
+    }
+    
+    form textarea
+    {
+        min-height: 7em;
+    }
+
+    form .formerize-placeholder
+    {
+        color: #555 !important;
+    }
+
+    form ::-webkit-input-placeholder
+    {
+        color: #555 !important;
+    }
+
+    form :-moz-placeholder
+    {
+        color: #555 !important;
+    }
+
+    form ::-moz-placeholder
+    {
+        color: #555 !important;
+    }
+
+    form :-ms-input-placeholder
+    {
+        color: #555 !important;
+    }
+
+    form ::-moz-focus-inner
+    {
+        border: 0;
+    }
+
+/* Button */
+
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    .button
+    {
+        display: inline-block;
+        color: inherit;
+        background: none;
+        text-decoration: none;
+        border: solid 1px #c2c7cc;
+        border-radius: 0.35em;
+        padding: 0.8em 2em 0.8em 2em;
+        cursor: pointer;
+        outline: 0;
+        -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        -webkit-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        -o-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        -ms-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+        transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    }
+
+    input[type="button"]:hover,
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    .button:hover
+    {
+        color: #3C7CBD;
+        border-color: #3C7CBD;
+    }
 
 /*  Fonts  */
     @font-face {
@@ -60,12 +174,56 @@
 
     }
 
+/*  Contact */
+    .wrapper-contact-form{
+        max-width: 66.66%;
+        height: auto;
+        margin-top: 25px;
+    }
+    .wrapper-contact-links{
+        width: 33.33%;
+        height: auto;
+    }
+
+    .row:before, 
+    .row:after {
+        content:"";
+        display: table ;
+         clear:both;
+    }
+
+    [class*='col-'] {
+        float: left;
+        min-height: 1px; 
+        width: 16.66%; 
+    }
+
+    .col-1{
+        width: 16.66%; 
+    }
+    .col-2{
+        width: 33.33%; 
+    }
+    .col-3{
+        width: 50%; 
+    }
+    .col-4{
+        width: 66.664%;
+    }
+    .col-5{
+        width: 83.33%;
+    }
+    .col-6{
+        width: 100%;
+    }
+
 
 /*  General CSS*/
     .wrapper{
+        width: 100%;
     	max-width: 1200px;
     	height: auto;
-    	margin: 0 auto;
+    	margin: auto auto;
         position: relative;
     }
 
