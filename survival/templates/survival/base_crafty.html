@@ -10,12 +10,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="{% static 'crafty/css/reset.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'crafty/css/main_responsive.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'telephasic/css/skel.css' %}" />
     <script type="text/javascript" src="{% static 'crafty/js/jquery.js'%}"></script>
     <script type="text/javascript" src="{% static 'crafty/js/carouFredSel.js'%}"></script>
     <script type="text/javascript" src="{% static 'crafty/js/main.js'%}"></script>
-    <script src="{% static 'telephasic/js/skel.min.js' %}"></script>
-	<script src="{% static 'telephasic/js/skel-layers.min.js' %}"></script>
+
+    <script src="{% static 'js/survival.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/survival.css' %}" />
     {% block head %}
     {% endblock %}
 </head>
@@ -27,10 +27,11 @@
 			<a href="#" class="menu_icon" id="menu_icon"></a>
 			<nav id="nav_menu">
 				<ul>
-					<li><a href="dev">Home</a></li>
-					<li><a href="dev_about">About</a></li>
-					<li><a href="#">Product</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="home">Home</a></li>
+					<li><a href="about">About</a></li>
+					<li><a href="input_data">Product</a></li>
+					<li><a href="sign_up">Sign Up</a></li>
+					<li><a href="contact">Contact</a></li>
 				</ul>
 			</nav>
 
