@@ -13,10 +13,10 @@ MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
 
 
 def home(request):
-	return render(request, 'survival/home_crafty.html')
+	return render(request, 'survival/home_crafty.html', {'page_name': 'home'})
 
 def contact(request):
-    return render(request, 'survival/contact_crafty.html')
+    return render(request, 'survival/contact_crafty.html', {'page_name': 'contact'})
 
 def home_telephasic(request):
 	return render(request, 'survival/home_telephasic.html')
@@ -25,7 +25,7 @@ def survey(request):
 	return render(request, 'survival/survey.html')
 
 def about(request):
-	return render(request, 'survival/about_crafty.html')
+	return render(request, 'survival/about_crafty.html', {'page_name': 'about'})  
 
 def sign_up(request):
     return render(request, 'survival/sign_up_crafty.html')
@@ -119,12 +119,3 @@ def subscribe(request):
 		return HttpResponse("Subscribed Successfully!")
 	else:
 		return HttpResponse("Error. Unable to subscribe.")
-
-def dev(request):
-    return render(request, 'survival/home_crafty.html', {'page_name': 'home'})
-
-def dev_about(request):
-    return render(request, 'survival/about_crafty.html', {'page_name': 'about'})    
-
-def dev_contact(request):
-    return render(request, 'survival/contact_crafty.html', {'page_name': 'contact'})    

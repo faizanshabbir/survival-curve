@@ -257,8 +257,8 @@
         flex: 2;
     }
 
-    .testimonials {
-        flex: 3;
+    .about {
+        flex: 4;
     }
 
     .info {
@@ -266,6 +266,12 @@
     }
 
 
+
+/*  About   */
+.about{
+    overflow:auto;
+
+}
 /*  header  */
     header{
         width: 100%;
@@ -580,7 +586,7 @@
 /*  Info Section  */
     .info{
         width: 100%;
-        overflow: hidden;
+        overflow: auto;
         background: #336FA1;
     }
 
