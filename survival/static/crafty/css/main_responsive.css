@@ -377,7 +377,7 @@
         overflow: hidden;
     }
 
-    html, body {
+    html, body.home {
         height: 100%;
     }
 
