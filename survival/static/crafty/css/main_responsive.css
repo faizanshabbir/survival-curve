@@ -23,6 +23,12 @@
 
     form
     {
+        width:100%;
+    }
+
+    input, textarea, select {
+        font-family: 'lato_regular';
+        font-size: 15px;
     }
 
     form .actions
@@ -32,7 +38,6 @@
 
     form label
     {
-        display: inline-block;
         font-weight: 300;
         color: #52575c;
         margin: 0 0 0.5em 0;
@@ -45,7 +50,6 @@
     form textarea
     {
         -webkit-appearance: none;
-        display: inline-block;
         background: #f9fbfe;
         border: solid 1px #d2d7dc;
         border-radius: 0.35em;
@@ -112,13 +116,14 @@
     input[type="reset"],
     .button
     {
+        width: 100%;
         display: inline-block;
         color: inherit;
         background: none;
         text-decoration: none;
         border: solid 1px #c2c7cc;
         border-radius: 0.35em;
-        padding: 0.8em 2em 0.8em 2em;
+        padding: 1.5em 2em 1.5em 2em;
         cursor: pointer;
         outline: 0;
         -moz-transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out;
@@ -301,24 +306,24 @@
 }
 
 .Grid--gutters {
-  margin: -1em 0 1em -1em;
+  margin: -0.5em -1em -0.5em -1em;
 }
 .Grid--gutters > .Grid-cell {
-  padding: 1em 0 0 1em;
+  padding: 0.5em 1em 0.5em 1em;
 }
 
 .Grid--guttersLg {
-  margin: -1.5em 0 1.5em -1.5em;
+  margin: -0.8em -1.5em 1.5em -1.5em;
 }
 .Grid--guttersLg > .Grid-cell {
-  padding: 1.5em 0 0 1.5em;
+  padding: 0.8em 1.5em 0.8em 1.5em;
 }
 
 .Grid--guttersXl {
-  margin: -2em 0 2em -2em;
+  margin: -1em -2em 1em -2em;
 }
 .Grid--guttersXl > .Grid-cell {
-  padding: 2em 0 0 2em;
+  padding: 1em 2em 1em 2em;
 }
 
 @media (break-sm) {
@@ -433,21 +438,10 @@
         flex: 2;
     }
 
-    .about {
-        flex: 4;
-    }
-
     .info {
         flex: 1;
     }
 
-
-
-/*  About   */
-.about{
-    overflow:auto;
-
-}
 /*  header  */
     header{
         width: 100%;
@@ -559,7 +553,7 @@
         overflow: hidden;
     }
 
-    html, body.home {
+    html, body.home, body.contact {
         height: 100%;
     }
 
