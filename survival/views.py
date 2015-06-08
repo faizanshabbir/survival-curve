@@ -34,8 +34,8 @@ def random_data(request):
     data = survival.random_data()
     return HttpResponse(data, content_type="application/json")
 
-def input_data(request):
-    return render(request, 'survival/input_data.html')
+def curve(request):
+    return render(request, 'survival/curve.html')
 
 def humza_input(request):
     return render(request, 'survival/humza_input.html')

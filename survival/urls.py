@@ -4,7 +4,7 @@ from . import views
 urlpatterns = patterns('',
 	url(r'^$', views.home),
 	url(r'^home$',views.home),
-	url(r'^input_data$', views.input_data),
+	url(r'^curve$', views.curve),
 	url(r'^survey$', views.survey),
 	url(r'^random_data$', views.random_data),
 	url(r'^humza_input$', views.humza_input),
