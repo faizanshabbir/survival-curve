@@ -451,7 +451,9 @@
 
     header .logo{
         float: left;
-        margin-top: 21px;
+        width: 150px;
+        margin-top: 10px;
+        margin-right: -10px;
     }
 
     header .menu_icon{
@@ -604,7 +606,7 @@
         float: left;
         margin-right: auto;
         margin-left: auto;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
     }
 
     .features .feature:nth-child(3n+0)
@@ -613,9 +615,13 @@
     }
 
     .feature .ficon{
+        height: 100px;
+        width: 100px;
         display: block;
         margin-right: auto;
         margin-left: auto;
+        padding-bottom: 20px;
+        color: #FFFFFF;
     }
 
     .feature .details_exp{
@@ -753,6 +759,189 @@
     }
 
 
+/*  Sign up  */
+    .signup{
+        text-align: center;
+    }
+
+    .signup-wrapper{
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        margin: auto auto;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .signup h2{
+        color: #4e4e4e;
+        font-family: "lato_regular", arial;
+        font-size: 35px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .caroufredsel_wrapper{
+        max-width: 1040px!important;
+        margin: 0 auto!important;
+    }
+
+    .signup .testi_slider{
+        max-width: 1040px!important;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .signup .testi_slider .t{
+        max-width: 1040px!important;
+        text-align: center;
+        float: left;
+        height: auto;
+    }
+
+    .signup p{
+        color: #8e8d8d;
+        font-family: "lato_regular", arial;
+        font-size: 25px;
+        line-height: 10px;
+        letter-spacing: 1px;
+    }
+
+    .signup p.author{
+        color: #686767;
+        font-family: "lato_bold", arial;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 40px;
+    }
+
+    .signup #t_navigation a{
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        background: #dadada;
+        text-decoration: none;
+        margin-right: 10px;
+        margin-top: 40px;
+
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -o-border-radius: 100px;
+    }
+
+    .signup #t_navigation a.selected{
+        background: #bebebe;
+    }
+
+    .sep_line{
+        display: block;
+        width: 13.5px;
+        height: 100px;
+    }
+
+    .sep_line:after{
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #dedede;
+        margin: 0 auto;
+    }
+
+    .sep_top{
+        border-bottom: 1px #dedede solid;
+        margin: 0 auto 40px auto;
+    }
+
+    .sep_bottom{
+        border-top: 1px #dedede solid;
+        margin: 40px auto 0 auto;
+    }
+
+    .pricing_box{
+        display: block;
+        width:400px;
+        background: #e5e5e5;
+        border: 1px #8B8B8B solid;
+        position: absolute;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 50%);
+
+        color: #fff;
+        font-family: "lato_bold", arial;
+        font-size: 30px;
+        font-weight: bold;
+        font-weight: bold;      
+    }
+
+    .pricing_box h3{
+        color: #000;
+        font-family: "lato_bold", arial;
+        font-size: 30px;
+        margin: 20px 0 20px 0;
+        font-weight: bold;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 40px;
+    }
+
+    .pricing_box p{
+        color: #000;
+        font-family: "lato_regular", arial;
+        font-size: 16px;
+        margin: 10px 0 10px 0px;
+        letter-spacing: 1px;
+        line-height: 30px;
+    }
+
+    div.hr {
+        background: #8B8B8B  no-repeat scroll center;
+        width:100%;
+        height: 0.5px;
+    }
+
+    sub, sup {
+      /* Specified in % so that the sup/sup is the
+         right size relative to the surrounding text */
+      font-size: 70%;
+     
+      /* Zero out the line-height so that it doesn't
+         interfere with the positioning that follows */
+      line-height: 0;
+     
+      /* Where the magic happens: makes all browsers position
+         the sup/sup properly, relative to the surrounding text */
+      position: relative;
+     
+      /* Note that if you're using Eric Meyer's reset.css, this
+         is already set and you can remove this rule */
+      vertical-align: baseline;
+    }
+     
+    sup {
+      /* Move the superscripted text up */
+      top: -0.5em;
+    }
+     
+    sub {
+      /* Move the subscripted text down, but only
+         half as far down as the superscript moved up */
+      bottom: -0.25em;
+    }
+
+    ul.signup {
+        width:300px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+   
+
+
 /*  Info Section  */
     .info{
         width: 100%;
@@ -764,7 +953,9 @@
         display: block;
         width: 50%;
         float: left;
-        background: url('../img/info_img.jpg') no-repeat;
+        text-align: center;
+        position: relative;
+
 
         background-size: cover;
         -webkit-background-size: cover;
@@ -845,7 +1036,8 @@
         font-family: "lato_regular", arial;
         font-size: 20px;
         text-decoration: none;
-        margin-top: 60px;
+        margin-top: 20px;
+        margin-bottom: 20px;
         text-transform: uppercase;
         letter-spacing: 1px;
 
