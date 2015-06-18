@@ -1,3 +1,5 @@
+
+
 /*
 
 	Template Author : pixelhint.com
@@ -142,7 +144,6 @@
         border-color: #3C7CBD;
     }
 
-
 /*  Fonts   */
     @font-face {
         font-family: 'lato_regular';
@@ -182,7 +183,7 @@
 
     }
 
-/*   Grid   */
+/*  Grid   */
 
     .Grid {
       display: flex;
@@ -400,6 +401,75 @@
     .wrapper-contact-links{
         width: 100%;
         padding: 5px;
+        text-align: center;
+        margin-left: 40px;
+    }
+
+
+    ul.social{
+        float: right;
+        list-style: none;
+        margin-top: 23px;
+        background: #353434;
+    }
+
+    ul.social li{
+        float: left;
+        margin-left: 10px;
+    }
+
+    ul.social li a{
+        display: block;
+        width: 35px;
+        height: 35px;
+        background: url('../img/sm.png') no-repeat;
+    }
+
+    ul.social li a:hover{
+        background: url('../img/sm_hover.png') no-repeat;
+    }
+
+    ul.social li a{
+        display: block;
+        width: 35px;
+        height: 35px;
+    }
+
+    ul.social li a.fb{
+        background-position: 0 0;
+    }
+
+    ul.social li a.twitter{
+        background-position: -36px 0;
+    }
+
+    ul.social li a.gplus{
+        background-position: -72px 0;
+    }
+
+    ul.divided li {
+        list-style: none;
+        border-top: solid 1px #d2d7dc;
+        padding-top: 2em;
+        margin-top: 2em;
+    }
+
+        ul.divided li:first-child {
+            padding-top: 0;
+            margin-top: 0;
+            border-top: 0;
+        }
+
+    ul.icons li:before {
+        display: inline-block;
+        color: #fff;
+        background: #61666b;
+        width: 2em;
+        height: 2em;
+        border-radius: 0.35em;
+        text-align: center;
+        line-height: 2em;
+        margin-right: 0.75em;
     }
 
 
@@ -498,46 +568,6 @@
 
     header nav ul li a:hover{
         color: #65bf95;
-    }
-
-    header ul.social{
-        float: right;
-        list-style: none;
-        margin-top: 23px;
-    }
-
-    header ul.social li{
-        float: left;
-        margin-left: 10px;
-    }
-
-    header ul.social li a{
-        display: block;
-        width: 35px;
-        height: 35px;
-        background: url('../img/sm.png') no-repeat;
-    }
-
-    header ul.social li a:hover{
-        background: url('../img/sm_hover.png') no-repeat;
-    }
-
-    header ul.social li a{
-        display: block;
-        width: 35px;
-        height: 35px;
-    }
-
-    header ul.social li a.fb{
-        background-position: 0 0;
-    }
-
-    header ul.social li a.twitter{
-        background-position: -36px 0;
-    }
-
-    header ul.social li a.gplus{
-        background-position: -72px 0;
     }
 
 
