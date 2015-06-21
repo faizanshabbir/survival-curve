@@ -1119,6 +1119,10 @@
 
     }
 
+    .about-link-container a{
+        text-decoration: none;
+    }
+
     .about-link-box{
         padding: 1em 1em 1em 1em;
 
@@ -1155,6 +1159,7 @@
         letter-spacing: 1px;
         line-height: 1.5em;
     }
+
 
 /*  Info Section  */
     .info{
