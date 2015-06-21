@@ -51,6 +51,7 @@
     form select,
     form textarea
     {
+        box-sizing: border-box;
         -webkit-appearance: none;
         background: #f9fbfe;
         border: solid 1px #d2d7dc;
