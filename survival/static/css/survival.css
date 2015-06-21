@@ -1,3 +1,29 @@
 #input-form2 tr td:first-child {
 	vertical-align: middle;
 }
+
+
+/* C3 PLOTTING STYLES  */
+
+/*
+.c3-grid, .c3line{
+	stroke: #000;
+}
+*/
+
+
+.c3-region.entire-chart {
+	fill: #6B6B6B;
+}
+
+.c3-region {
+	fill: #6B6B6B;
+}
+
+#chart .c3-line-Group-Uno {
+  stroke-width: 5px;
+}
+
+#chart .c3-line-Group-Dos {
+  stroke-width: 5px;
+}

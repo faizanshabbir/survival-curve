@@ -128,7 +128,24 @@ function plotSurvival(plottableData) {
 	    		max: 1,
 	    		padding: { top: 0, bottom: 0}
 	    	}
-	    }
+	    },
+	    grid: {
+	        x: {
+	            show: true
+	        },
+	        y: {
+	            show: true
+	        }
+    	},
+	    tooltip: {
+		    show: false // Default true
+		},
+
+		regions: [
+        {start:-10, end:parseInt(plottableData.lengthOfExprimentInDays, 10)+10, class: 'entire-chart' },
+        ]
+
+
 	};
 
 	// console.debug("c3args", c3args);
