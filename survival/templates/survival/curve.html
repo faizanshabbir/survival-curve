@@ -18,67 +18,46 @@
             <div id="curve"></div>   
         </div>
     	<div class="form-box p10">
-    		<div>
-                <form id="input-form1">
-                    <input type="hidden" name="numberOfGroups" value="2">
-                    <table>
-                        <tr>
-                            <td class="labelCell">Length of experiment (days):</td>
-                            <td>
-                                <input type="text" name="lengthOfExprimentInDays">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Group 1</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Group Label:</td>
-                            <td>
-                                <input type="text" name="name1">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Number of Samples:</td>
-                            <td>
-                                <input type="text" name="samplesInGroup">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Data Series:</td>
-                            <td>
-                                <input type="text" name="type2_data1" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Group 2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Group Label:</td>
-                            <td>
-                                <input type="text" name="name2">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Number of Samples:</td>
-                            <td>
-                                <input type="text" name="samplesInGroup">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="labelCell">Data Series:</td>
-                            <td>
-                                <input type="text" name="type2_data2" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- <input type="submit" value="Generate Curve"> -->
-                    <!-- <button type="button" onclick="submitForm($('#input-form1'))">Generate Curve</button> -->
-                </form>
-    		</div>
-    		<button class="button" onclick="animateCurveDraw()">Generate</button>
-            <button class="button" onclick="fillSampleData()">Fill in Sample Data</button>
+            <div class="h1">Generate Curve</div>
+    		<form id="input-form1">
+                <input type="hidden" name="numberOfGroups" value="2">
+                <div class="field">
+                    <label>Length of experiment (days):</label>
+                    <input type="text" name="lengthOfExprimentInDays">
+                </div>
+                <div class="group">
+                    <div class="field">
+                        <label>Group 1 Label</label>
+                        <input type="text" name="name1">
+                    </div>
+                    <div class="field">
+                        <label>Number of Samples:</label>
+                        <input type="text" name="samplesInGroup">
+                    </div>
+                    <div class="field">
+                        <label>Data Series:</label>
+                        <input type="text" name="type2_data1" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="field">
+                        <label>Group 2 Label</label>
+                        <input type="text" name="name2">
+                    </div>
+                    <div class="field">
+                        <label>Number of Samples:</label>
+                        <input type="text" name="samplesInGroup">
+                    </div>
+                    <div class="field">
+                        <label>Data Series:</label>
+                        <input type="text" name="type2_data2" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
+                    </div>
+                </div>
+            </form>
+            <div class="button-area">
+                <button class="button" onclick="animateCurveDraw()">Generate</button>
+                <button class="button" onclick="fillSampleData()">Fill in Sample Data</button>
+            </div>
     	</div>
     </div>
     <div class="col-right-1 p10">

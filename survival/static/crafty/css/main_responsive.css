@@ -223,12 +223,43 @@
         max-width: 800px;
     }
 
+    .curve .field {
+        display: flex;
+        align-items: center;
+    }
+
     .curve .form-box input {
-        width: 90%;
+        max-width: 80%;
+    }
+
+    .curve .field label {
+        margin-right: 1em;
+        width: 200px;
+    }
+
+    .curve .group {
+        padding: 10px;
+    }
+
+    .curve .group:nth-child(odd) {
+        background-color: white;
+    }
+
+    .curve .group:nth-child(even) {
+        background-color: gray;
     }
 
     .p10 {
         padding: 10px;
+    }
+
+    .curve .button {
+        width: 49%;
+        box-sizing: border-box;
+    }
+
+    .curve .button:first-of-type {
+        margin-right: 1em;
     }
 
     .flexbox-container .curve-box {
@@ -236,6 +267,19 @@
     }
 
     .flexbox-container .form-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .curve .button-area {
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    .curve .h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
     }
 
 /*  Grid   */

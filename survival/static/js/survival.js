@@ -205,7 +205,7 @@ function submitForm(formObj) {
 	// console.debug("submitForm", formObj);
 	var data = {};
 	//Integer inputs
-	var integerInputs = ['numberOfGroups', 'samplesInGroup', 'lengthOfExprimentInDays', 'name1', 'name2'];
+	var integerInputs = ['numberOfGroups', 'samplesInGroup', 'samplesInGroup', 'lengthOfExprimentInDays', 'name1', 'name2'];
 	integerInputs.forEach(function(inputName) {
 		var input = getInput(inputName);
 		var value = input.val();
