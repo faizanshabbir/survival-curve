@@ -6,10 +6,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.css">
-
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-
 	<script type="text/javascript">
 	</script>
 
@@ -19,25 +15,80 @@
 <div class="flexbox-container">
     <div class="col-left-2">
     	<div class="curve-box">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div id="curve"></div>   
         </div>
     	<div class="form-box">
     		<div>
-    			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <form id="input-form1">
+                    <input type="hidden" name="numberOfGroups" value="2">
+                    <table>
+                        <tr>
+                            <td>Length of experiment (days):</td>
+                            <td>
+                                <input type="text" name="lengthOfExprimentInDays">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Group 1</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Group Label:</td>
+                            <td>
+                                <input type="text" name="name1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of Samples:</td>
+                            <td>
+                                <input type="text" name="samplesInGroup">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Data Series:</td>
+                            <td>
+                                <input type="text" name="type2_data1" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Group 2</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Group Label:</td>
+                            <td>
+                                <input type="text" name="name2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of Samples:</td>
+                            <td>
+                                <input type="text" name="samplesInGroup">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Data Series:</td>
+                            <td>
+                                <input type="text" name="type2_data2" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- <input type="submit" value="Generate Curve"> -->
+                    <!-- <button type="button" onclick="submitForm($('#input-form1'))">Generate Curve</button> -->
+                </form>
     		</div>
     		<button onclick="animateCurveDraw()">Generate</button>
     	</div>
     </div>
-    <div class="col-right-1">Two</div>
+    <div class="col-right-1">
+        This is how you generate a survival curve. 
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
 </div>
 {% endblock %}
