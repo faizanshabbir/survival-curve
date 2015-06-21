@@ -11,3 +11,11 @@ class subscribeList(models.Model):
 
 	def __str__(self):
 		return ' '.join([self.first_name,self.last_name,])
+
+# Contact form 
+class contactForm(models.Model):
+	name = models.CharField(max_length=255,)
+	email = models.EmailField()
+
+	message = models.TextField()
+

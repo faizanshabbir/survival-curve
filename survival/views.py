@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib import auth
 from models import subscribeList
+from models import contactForm
+from forms import ContactKMForm
 
 from mailchimp import utils
 MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
@@ -119,3 +121,22 @@ def subscribe(request):
 		return HttpResponse("Subscribed Successfully!")
 	else:
 		return HttpResponse("Error. Unable to subscribe.")
+
+def contactKM(request):
+
+    context = RequestContext(request)
+
+    if request.method == 'POST':
+        form = ContactKMForm(request.POST)
+
+        if form.is_valid():
+            name = request.POST['name']
+            email = request.POST['email']
+            message = request.POST['message']
+
+            ContactForm_obj = contactForm(name = name, email = email, message = message)
+            ContactForm_obj = ContactForm_obj.save()
+
+            return HttpResponse("Contact Message Sent!")
+    else:
+        return HttpResponse("Error. Unable to send contact message.")
