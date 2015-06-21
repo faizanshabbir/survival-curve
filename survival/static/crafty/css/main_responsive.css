@@ -1160,7 +1160,7 @@
     .info{
         width: 100%;
         overflow: hidden;
-        background: #336FA1;
+        background: #407DB0;
     }
 
     .info_pic{
@@ -1181,6 +1181,7 @@
         width: 50%;
         float: left;
         padding: 80px 0;
+        background: #336FA1;
     }
 
     .info_details h3{
@@ -1199,7 +1200,7 @@
         color: #ededed;
         font-family: "lato_regular", arial;
         font-size: 16px;
-        margin: 0 0 3.333333333333333% 40px;
+        margin: 0 1em 3.333333333333333% 40px;
         letter-spacing: 1px;
         line-height: 30px;
     }
@@ -1208,7 +1209,7 @@
         color: #fff;
         font-family: "lato_regular", arial;
         font-size: 16px;
-        margin: 0 0 0 40px;
+        margin: 0 0 0 0;
         text-decoration: none;
     }
 
