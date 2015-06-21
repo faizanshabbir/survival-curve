@@ -147,6 +147,7 @@
     {
         color: #3C7CBD;
         border-color: #3C7CBD;
+        margin-bottom: 1px;
     }
 
 /*  Fonts   */
@@ -207,7 +208,6 @@
 
     .flexbox-container .form-box,
     .flexbox-container .curve-box {
-        border: 1px solid;
         overflow: auto;
         flex: 1;
     }

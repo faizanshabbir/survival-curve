@@ -23,9 +23,19 @@ function animateCurveDraw() {
 	formBox.addClass('active');
 	curveBox.addClass('active');
 
-	curveBox.fadeIn(1000);
-
 	submitForm($('#input-form1'));
+}
+
+function displayGraph() {
+	var curve = $('#curve');
+	var curveHeight = curve.css('max-height');
+	var curveHeightInt = parseInt(curveHeight, 10);
+	var curveWidth = (curveHeightInt * 1.2) + "px";
+
+	curve.css('max-width', curveWidth);
+	$('#curve svg').css('width', curveWidth);
+
+	$('.curve-box').fadeIn(1000);
 }
 
 function saveSvgAsFile() {
@@ -119,6 +129,8 @@ function plotSurvival(plottableData) {
 
 	// console.debug("c3args", c3args);
 	var chart = c3.generate(c3args);
+
+	displayGraph();
 }
 
 function round(value, decimals) {
