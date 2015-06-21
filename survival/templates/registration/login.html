@@ -1,22 +1,47 @@
-{% extends "base.html" %}
+{% extends "survival/base_crafty.html" %}
 {% load i18n %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<h1>KM Survival says... hello {{ user.username }}!</h1>
-{% else %}
-<h1>KM Survival says... hello anonymous!</h1>
-{% endif %}
 
-<form method="post" action="login_form">
-  {{ form.as_p }}
+<section class ="signup">
+<section class="signup-wrapper">
+	
+	<span class="sep_line sep_top"></span>
+	<div class="Grid Grid--gutters Grid--flexCells u-textCenter">
+	<div class="Grid-cell u-1of3">
+	</div>
 
-  <input type="submit" value="{% trans 'Log in' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+	<div class="Grid-cell--center u-1of3">
+	
+		{% if user.is_authenticated %}
+		<h2>KM Survival says... hello {{ user.username }}!</h2>
+		{% else %}
+		<h2>KM Survival says... hello anonymous!</h2>
+		{% endif %}
+	
+		<br>
 
-<form action="/register">
-<input type="submit" value="Register">
-</form>
+		<form method="post" action="login_form">
+		  {{ form.as_p }}
+
+		  <input type="submit" value="{% trans 'Log in' %}" />
+		  <input type="hidden" name="next" value="{{ next }}" />
+		</form>
+
+		<form action="/register">
+		<input type="submit" value="Register">
+		</form>
+    
+    </div>
+	
+	<div class="Grid-cell u-1of3">
+    </div>
+
+    </div>
+
+</section><!--  End email signup  -->
+</section>
+
+
 
 {% endblock %}

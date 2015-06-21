@@ -21,7 +21,7 @@
 	
 */
 
-/*   Form   */
+/*  Form   */
 
     form
     {
@@ -109,7 +109,6 @@
     {
         border: 0;
     }
-
 
 /*  Button  */
 
@@ -500,7 +499,6 @@
         margin-right: 0.75em;
     }
 
-
 /*  General CSS     */
     .wrapper{
         width: 100%;
@@ -523,7 +521,6 @@
     	-moz-transition:all .2s linear;
     	-o-transition:all .2s linear;
     }
-
 
 /*  Flexbox layout  */
 
@@ -598,6 +595,41 @@
         color: #65bf95;
     }
 
+    header .login-links{
+        float: right;
+        margin-right: 1em;
+        padding-top: 2em;
+    }
+
+    header .login-links a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    header .login-links ul{
+        list-style: none;
+    }
+
+    header .login-links ul li{
+        float: left;
+        margin-left: 35px;
+        font-size: 16px;
+        font-family: 'lato_regular', arial;
+        letter-spacing: 1px;
+    }
+
+    header .login-links ul li:first-child{
+        margin-left: 0;
+    }
+
+    header .login-links ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    header .login-links ul li a:hover{
+        color: #65bf95;
+    }
 
 /*  Billboard  */
 
@@ -647,7 +679,6 @@
         text-transform: uppercase;
         z-index: 8888;
     }
-
 
 /*  Services/features  */
     .features{
@@ -722,7 +753,6 @@
         font-family: arial;
         margin-left: 10px;
     }
-
 
 /*  Testimonials  */
     .testimonials{
@@ -816,7 +846,6 @@
         margin: 40px auto 0 auto;
     }
 
-
 /*  Sign up  */
     .signup{
         text-align: center;
@@ -861,7 +890,7 @@
     .signup p{
         color: #8e8d8d;
         font-family: "lato_regular", arial;
-        font-size: 25px;
+        font-size: 15px;
 
         letter-spacing: 1px;
     }
@@ -1070,7 +1099,6 @@
         margin-left: 10px;
     }
 
-
 /*  About   */
     .about-link-wrapper{
 
@@ -1093,8 +1121,8 @@
     }
     .about-link-icon{
         max-width: 30%;
-        padding-top: 1em;
-        margin-left:1em;
+        padding-top: .8em;
+        margin-left: 1em;
         float:left;
     }
     .about-link-text{
@@ -1122,8 +1150,6 @@
         letter-spacing: 1px;
         line-height: 1.5em;
     }
-
-
 
 /*  Info Section  */
     .info{
@@ -1185,7 +1211,6 @@
         margin-left: 10px;
     }
 
-
 /*  Call To Action Section  */
     .cta{
         display: block;
@@ -1242,7 +1267,6 @@
         margin: 0 auto;
     }
 
-
 /*  Footer  */
     footer{
         padding: 5px 0;
@@ -1268,7 +1292,6 @@
     a{
         color: #3b3b3b;
     }
-
 
 /*  Responsive code  */
     @media (max-width:1200px){
