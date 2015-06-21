@@ -7,6 +7,8 @@ function animateCurveDraw() {
 	curveBox.addClass('active');
 
 	curveBox.fadeIn(1000);
+
+	submitForm($('#input-form1'));
 }
 
 function saveSvgAsFile() {
@@ -70,6 +72,7 @@ function flattenSingleValueArrays(singleValueArrays) {
 function plotSurvival(plottableData) {
 	// console.debug("Plottable json", plottableData);
 	var c3args = {
+		bindto: '#curve',
 	    data: {
 	        xs: plottableData.xs,
 	        columns: plottableData.columns,
