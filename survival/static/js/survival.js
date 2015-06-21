@@ -1,3 +1,12 @@
+function animateCurveDraw() {
+	console.debug("animateCurveDraw");
+	var formBox = $('.form-box');
+	var curveBox = $('.curve-box');
+
+	formBox.addClass('active');
+	curveBox.addClass('active');
+}
+
 function saveSvgAsFile() {
 	var canvasElement = document.createElement('canvas');
 	canvasElement.setAttribute('id', 'canvas');

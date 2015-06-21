@@ -180,7 +180,40 @@
              url('../fonts/avantgardelt-extralight.svg#avantgardelt-extralight') format('svg');
         font-weight: normal;
         font-style: normal;
+    }
 
+    .flexbox-container {
+        display: flex;
+        overflow: auto;
+    }
+
+    .flexbox-container .col-left-2 {
+        background-color: #F0F0F0;
+        flex: 2;
+        height: 400px;
+    }
+
+    .flexbox-container .col-right-1 {
+        background-color: #ACE6E6;
+        flex: 1;
+    }
+
+    .flexbox-container .form-box,
+    .flexbox-container .curve-box {
+        border: 1px solid;
+        overflow: auto;
+    }
+
+    .flexbox-container .form-box.active {
+        transtion: transform 0.5s ease-in-out;
+        transform: translate(0, 50px);
+    }
+
+    .flexbox-container .curve-box.active {
+/*        transition: -webkit-transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+        -webkit-transform: scale(1, 2);
+                transform: scale(1, 2);*/
     }
 
 /*  Grid   */

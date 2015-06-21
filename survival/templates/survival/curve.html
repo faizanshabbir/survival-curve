@@ -11,144 +11,26 @@
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
 	<script type="text/javascript">
-		// $(function() {
-		// 	$( "form.input-form1" ).submit(function( event ) {
-		// 	  // alert( "Handler for .submit() called." );
-		// 	  event.preventDefault();
-		// 	  submitForm($(this));
-		// 	});
-		// });
-
-		//$('#tab-container').tabs();
-		$(function() {
-        	$( "#tab-container" ).tabs();
-   		 });
 	</script>
 
 {% endblock %}
 
-{% block banner %}
-<section id="hero" class="container">
-
-<br>
-<br>
-	<h2>Making Survival Curve plotting easy.</h2>
-</section>
-{% endblock %}
-
-
 {% block content %}
-    <br>
-    <br>
-    <section id="one" class="main style1">
-    <div class="container">
-	    <div id="chart"></div>
-
-        <div id="tab-container" class="module_bg">
-            <ul class='shadetabs'>
-                <li class='tab'><a href="#tabs1-type1">Data Input Format 1</a></li>
-                <li class='tab'><a href="#tabs1-type2">Data Input Format 2</a></li>
-            </ul>
-            <div id="tabs1-type1">
-                <form id="input-form1">
-                	<input type="hidden" name="numberOfGroups" value="2">
-                    <table>
-<!--                         <tr>
-                            <td>Number of groups:</td>
-                            <td>
-                                <input type="text" name="numberOfGroups">
-                            </td>
-                        </tr> -->
-                        <tr>
-                            <td>Length of experiment (days):</td>
-                            <td>
-                                <input type="text" name="lengthOfExprimentInDays">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Group 1</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Group Label:</td>
-                            <td><input type="text" name="name1"></td>
-                        </tr>
-                        <tr>
-                            <td>Number of Samples:</td>
-                            <td>
-                                <input type="text" name="samplesInGroup">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Data Series:</td>
-                            <td>
-                                <input type="text" name="type2_data1" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Group 2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Group Label:</td>
-                            <td><input type="text" name="name2"></td>
-                        </tr>
-                        <tr>
-                            <td>Number of Samples:</td>
-                            <td>
-                                <input type="text" name="samplesInGroup">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Data Series:</td>
-                            <td>
-                                <input type="text" name="type2_data2" placeholder="Enter day sample died separated by comma (eg 2, 6, 6, 8)">
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- <input type="submit" value="Generate Curve"> -->
-                    <button type="button" onclick="submitForm($('#input-form1'))">Generate Curve</button>
-                </form>
-            </div>
-            <br>
-            <br>
-            <div id="tabs1-type2">
-                <form name="data">
-                    <table>
-                        <p> Data Set 1 </p>
-                        <tr>
-                            <!-- <td class="defCol"></td> -->
-                            <input type="text" name="time1" id="time1" value="" placeholder="Lifetime of each sample" />
-                            <!-- <td class="defCol"></td> -->
-                            <input type="text" name="data1" id="data1" value="" placeholder="Whether each sample died (1) or lived (0)" />
-                        </tr>
-                        <br>
-                        <p> Data Set 2 </p>
-                        <tr>
-                            <!-- <td class="defCol"></td> -->
-                            <input type="text" name="time2" id="time2" value="" placeholder="Lifetime of each sample" />
-                            <!-- <td class="defCol"></td> -->
-                            <input type="text" name="data2" id="data2" value="" placeholder="Whether each sample died (1) or lived (0)" />
-                        </tr>
-                    </table>
-                </form>
-                <button type="button" onclick="submitData()">Generate Curve</button>
-            </div>
-        </div>
-        </div>
-        </section>
-
-                <!-- Promo -->
-            <div id="promo-wrapper">
-                <section id="promo">
-                    <h2>Sign up for our email list</h2>
-                    <form method="post" action="subscribe">
-                        Be the first to find out as we add new features to the site.
-                        <input type="text" name="personalName" placeholder="Name" />
-                        <input type="text" name="emailAddress" placeholder="Email Address"/>
-                        <input type="submit" value="Sign Up" />
-                    </form>
-                </section>
-            </div>
-
+<div class="flexbox-container">
+    <div class="col-left-2">
+    	<div class="curve-box">curve</div>
+    	<div class="form-box">
+    		<div>
+    			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    		</div>
+    		<button onclick="animateCurveDraw()">Generate</button>
+    	</div>
+    </div>
+    <div class="col-right-1">Two</div>
+</div>
 {% endblock %}

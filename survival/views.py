@@ -35,7 +35,7 @@ def random_data(request):
     return HttpResponse(data, content_type="application/json")
 
 def curve(request):
-    return render(request, 'survival/curve.html')
+    return render(request, 'survival/curve.html', {'page_name': 'curve'})
 
 def humza_input(request):
     return render(request, 'survival/humza_input.html')
