@@ -28,6 +28,11 @@
         width:100%;
     }
 
+    form.django-form p,
+    form.django-form input {
+        margin: 1em 0;
+    }
+
     input, textarea, select {
         font-family: 'lato_regular';
         font-size: 15px;
