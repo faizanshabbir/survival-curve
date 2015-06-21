@@ -5,6 +5,8 @@ function animateCurveDraw() {
 
 	formBox.addClass('active');
 	curveBox.addClass('active');
+
+	curveBox.fadeIn(1000);
 }
 
 function saveSvgAsFile() {

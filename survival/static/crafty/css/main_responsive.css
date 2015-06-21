@@ -185,12 +185,14 @@
     .flexbox-container {
         display: flex;
         overflow: auto;
+        height: 100%;
     }
 
     .flexbox-container .col-left-2 {
         background-color: #F0F0F0;
         flex: 2;
-        height: 400px;
+        display: flex;
+        flex-direction: column;
     }
 
     .flexbox-container .col-right-1 {
@@ -202,18 +204,11 @@
     .flexbox-container .curve-box {
         border: 1px solid;
         overflow: auto;
+        flex: 1;
     }
 
-    .flexbox-container .form-box.active {
-        transtion: transform 0.5s ease-in-out;
-        transform: translate(0, 50px);
-    }
-
-    .flexbox-container .curve-box.active {
-/*        transition: -webkit-transform 0.5s ease-in-out;
-        transition: transform 0.5s ease-in-out;
-        -webkit-transform: scale(1, 2);
-                transform: scale(1, 2);*/
+    .flexbox-container .curve-box {
+        display: none;
     }
 
 /*  Grid   */
@@ -618,7 +613,7 @@
         overflow: hidden;
     }
 
-    html, body.home, body.contact {
+    html, body.home, body.contact, body.curve {
         height: 100%;
     }
 
