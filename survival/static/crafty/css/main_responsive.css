@@ -206,6 +206,19 @@
         flex: 1;
     }
 
+    .curve .form-box .labelCell {
+        width: 200px;
+    }
+
+    .curve .form-box table {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .curve .form-box input {
+        width: 90%;
+    }
+
     .p10 {
         padding: 10px;
     }
