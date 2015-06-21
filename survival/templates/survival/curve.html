@@ -14,10 +14,10 @@
 {% block content %}
 <div class="flexbox-container">
     <div class="col-left-2">
-    	<div class="curve-box">
+    	<div class="curve-box p10">
             <div id="curve"></div>   
         </div>
-    	<div class="form-box">
+    	<div class="form-box p10">
     		<div>
                 <form id="input-form1">
                     <input type="hidden" name="numberOfGroups" value="2">
@@ -78,9 +78,10 @@
                 </form>
     		</div>
     		<button onclick="animateCurveDraw()">Generate</button>
+            <button onclick="fillSampleData()">Fill in Sample Data</button>
     	</div>
     </div>
-    <div class="col-right-1">
+    <div class="col-right-1 p10">
         This is how you generate a survival curve. 
 
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

@@ -206,13 +206,15 @@
         flex: 1;
     }
 
-    .flexbox-container .curve-box {
-        display: none;
+    .p10 {
         padding: 10px;
     }
 
+    .flexbox-container .curve-box {
+        display: none;
+    }
+
     .flexbox-container .form-box {
-        padding: 10px;
     }
 
 /*  Grid   */

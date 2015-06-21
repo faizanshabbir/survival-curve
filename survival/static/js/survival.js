@@ -1,3 +1,20 @@
+function fillSampleData() {
+	var inputNames = {
+		"numberOfGroups": 2,
+		"lengthOfExprimentInDays": 100,
+		"name1": "Group Uno",
+		"samplesInGroup": 10,
+		"type2_data1": "30,35,35,35,50,55,60,70,70,70",
+		"name2": "Group Dos",
+		"samplesInGroup": 10,
+		"type2_data2": "60,75,79,85,85,85,90"
+	};
+
+	for (var inputName in inputNames) {
+		$('input[name="' + inputName + '"]').val(inputNames[inputName]);
+	}
+}
+
 function animateCurveDraw() {
 	console.debug("animateCurveDraw");
 	var formBox = $('.form-box');
