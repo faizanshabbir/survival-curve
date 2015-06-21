@@ -27,15 +27,15 @@ function animateCurveDraw() {
 }
 
 function displayGraph() {
-	var curve = $('#curve');
-	var curveHeight = curve.css('max-height');
-	var curveHeightInt = parseInt(curveHeight, 10);
-	var curveWidth = (curveHeightInt * 1.2) + "px";
+	// var curve = $('#curve');
+	// var curveHeight = curve.css('max-height');
+	// var curveHeightInt = parseInt(curveHeight, 10);
+	// var curveWidth = (curveHeightInt * 1.2) + "px";
 
-	curve.css('max-width', curveWidth);
-	$('#curve svg').css('width', curveWidth);
+	// curve.css('max-width', curveWidth);
+	// $('#curve svg').css('width', curveWidth);
 
-	$('.curve-box').fadeIn(1000);
+	$('.curve-box').fadeIn(500);
 }
 
 function saveSvgAsFile() {
@@ -100,6 +100,10 @@ function plotSurvival(plottableData) {
 	// console.debug("Plottable json", plottableData);
 	var c3args = {
 		bindto: '#curve',
+		size: {
+			height: 400,
+			width: 600
+		},
 	    data: {
 	        xs: plottableData.xs,
 	        columns: plottableData.columns,

@@ -210,6 +210,8 @@
     .flexbox-container .curve-box {
         overflow: auto;
         flex: 1;
+/*        justify-content: center;
+        align-items: center;*/
     }
 
     .curve .form-box .labelCell {
