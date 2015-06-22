@@ -150,6 +150,7 @@
     }
 
 /*  Fonts   */
+
     @font-face {
         font-family: 'lato_regular';
         src: url('../fonts/lato-regular.eot');
@@ -1026,7 +1027,7 @@
         position: absolute;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, 25%);
+        transform: translate(-50%, 55%);
 
         color: #fff;
         font-family: "lato_bold", arial;
