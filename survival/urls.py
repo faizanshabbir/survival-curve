@@ -17,5 +17,6 @@ urlpatterns = patterns('',
 	url(r'^logout$', views.user_logout),
 	url(r'^register$', views.register),
 	url(r'^contactKM$',views.contactKM),
-	url(r'^subscribe$', views.subscribe)
+	url(r'^subscribe$', views.subscribe),
+	url(r'^email-signup$',views.email_signup)
 )

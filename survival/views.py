@@ -32,6 +32,9 @@ def about(request):
 def sign_up(request):
     return render(request, 'survival/sign_up_crafty.html')
 
+def email_signup(request):
+    return render(request, 'survival/email_signup.html')
+
 def random_data(request):
     data = survival.random_data()
     return HttpResponse(data, content_type="application/json")
