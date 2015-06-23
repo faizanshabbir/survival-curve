@@ -21,18 +21,20 @@
             <div class="h1">Generate Curve</div>
     		<form id="input-form1">
                 <input type="hidden" name="numberOfGroups" value="2">
-                <div class="field group">
-                    <label>Length of experiment (days):</label>
-                    <input type="text" name="lengthOfExprimentInDays">
+                <div class="group">
+                    <div class="field">
+                        <label>Length of experiment (days):</label>
+                        <input type="text" name="lengthOfExprimentInDays">
+                    </div>
+                    <div class="field">
+                        <label>Number of samples per group:</label>
+                        <input type="text" name="samplesInGroup">
+                    </div>
                 </div>
                 <div class="group">
                     <div class="field">
                         <label>Group 1 Label</label>
                         <input type="text" name="name1">
-                    </div>
-                    <div class="field">
-                        <label>Number of Samples:</label>
-                        <input type="text" name="samplesInGroup">
                     </div>
                     <div class="field">
                         <label>Data Series:</label>
@@ -43,10 +45,6 @@
                     <div class="field">
                         <label>Group 2 Label</label>
                         <input type="text" name="name2">
-                    </div>
-                    <div class="field">
-                        <label>Number of Samples:</label>
-                        <input type="text" name="samplesInGroup">
                     </div>
                     <div class="field">
                         <label>Data Series:</label>
@@ -66,7 +64,7 @@
         </p>
         
         <p>
-            For each data set, enter the label for that data set, the number of samples in the data set and the time each sample died. The times of death should be comma separated (ex: 2, 6, 6, 8).
+            First enter the how many days the expirment was and how many samples are in each group. Then, for each data set, enter a label and the time each sample died. The times of death should be comma separated (ex: 2, 6, 6, 8).
         </p>
     </div>
 </div>
