@@ -727,6 +727,13 @@
 
     html, body.home, body.contact {
         height: 100%;
+        min-height: 600px;
+    }
+
+    @media (max-width: 800px) {
+        html, body.home, body.contact {
+            height: auto;
+        }
     }
 
     .billboard .caption{
