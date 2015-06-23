@@ -199,6 +199,7 @@
         flex: 4;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .flexbox-container .col-right-1 {
@@ -208,17 +209,18 @@
 
     .flexbox-container .form-box,
     .flexbox-container .curve-box {
-        overflow: auto;
+        display: flex;
+        flex-direction: column;
         flex: 1;
-/*        justify-content: center;
-        align-items: center;*/
+        justify-content: center;
+        align-items: center;
     }
 
     .curve .form-box .labelCell {
         width: 200px;
     }
 
-    .curve .form-box table {
+    .curve .form-box {
         width: 100%;
         max-width: 800px;
     }
@@ -253,28 +255,25 @@
         padding: 10px;
     }
 
-    .curve .button {
-        width: 49%;
-        box-sizing: border-box;
-    }
-
-    .curve .button:first-of-type {
-        margin-right: 1em;
-    }
 
     .flexbox-container .curve-box {
         display: none;
-    }
-
-    .flexbox-container .form-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 1em;
     }
 
     .curve .button-area {
         margin-top: 1em;
         width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .curve .button {
+        flex: 1;
+    }
+
+    .curve .button:first-of-type {
+        margin-right: 1em;
     }
 
     .curve .h1 {
