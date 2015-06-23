@@ -196,7 +196,7 @@
     }
 
     .flexbox-container .col-left-2 {
-        background-color: #F0F0F0;
+        background-color: #FFF;
         flex: 4;
         display: flex;
         flex-direction: column;
@@ -211,10 +211,29 @@
 
     .col-right-1 p {
         margin-top: 1em;
+        font-family: "lato_regular", arial;
+        font-size: 15px;
+
+        letter-spacing: 1px;
     }
 
+
     .col-right-1 p:first-of-type {
-        margin-top: 0;
+        margin-top: 1em;
+        font-family: "lato_regular", arial;
+        font-size: 15px;
+
+        letter-spacing: 1px;
+    }
+
+    .col-right-1 a{
+        color: #fff;
+    }
+
+    .col-right-1 h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        margin-top: 3em;
     }
 
     .flexbox-container .form-box,
@@ -251,14 +270,16 @@
 
     .curve .group {
         padding: 10px;
+        border-style: dashed;
+        border-width: 1px;
     }
 
     .curve .group:nth-child(odd) {
-        background-color: white;
+        background-color: #F7F7F7;
     }
 
     .curve .group:nth-child(even) {
-        background-color: #B8B8B8
+        background-color: #F7F7F7;
     }
 
     .p10 {
@@ -288,6 +309,11 @@
     .curve .h1 {
         font-size: 2em;
         margin-bottom: 0.5em;
+    }
+    .curve-box .h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        margin-left: 3.5em;
     }
 
 /*  Grid   */
