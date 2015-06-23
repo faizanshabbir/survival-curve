@@ -27,13 +27,7 @@ function animateCurveDraw() {
 }
 
 function displayGraph() {
-	// var curve = $('#curve');
-	// var curveHeight = curve.css('max-height');
-	// var curveHeightInt = parseInt(curveHeight, 10);
-	// var curveWidth = (curveHeightInt * 1.2) + "px";
-
-	// curve.css('max-width', curveWidth);
-	// $('#curve svg').css('width', curveWidth);
+	$('#curve svg').css('overflow', 'visible');
 
 	$('.curve-box').fadeIn(500);
 }
@@ -126,7 +120,7 @@ function plotSurvival(plottableData) {
 	    	y: {
 	    		min: 0,
 	    		max: 1,
-	    		padding: { top: 0, bottom: 0}
+	    		padding: { top: 0, bottom: 0, left: 50}
 	    	}
 	    },
 	    grid: {

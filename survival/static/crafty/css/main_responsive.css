@@ -192,6 +192,7 @@
         display: flex;
         overflow: auto;
         height: 100%;
+        border-top: 1px #dedede solid;
     }
 
     .flexbox-container .col-left-2 {
@@ -203,8 +204,17 @@
     }
 
     .flexbox-container .col-right-1 {
-        background-color: #ACE6E6;
+        background-color: #353434;
         flex: 1;
+        color: white;
+    }
+
+    .col-right-1 p {
+        margin-top: 1em;
+    }
+
+    .col-right-1 p:first-of-type {
+        margin-top: 0;
     }
 
     .flexbox-container .form-box,
@@ -248,14 +258,13 @@
     }
 
     .curve .group:nth-child(even) {
-        background-color: gray;
+        background-color: #B8B8B8
     }
 
     .p10 {
         padding: 10px;
     }
-
-
+    
     .flexbox-container .curve-box {
         display: none;
         margin-top: 1em;

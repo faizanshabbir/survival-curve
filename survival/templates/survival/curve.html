@@ -21,7 +21,7 @@
             <div class="h1">Generate Curve</div>
     		<form id="input-form1">
                 <input type="hidden" name="numberOfGroups" value="2">
-                <div class="field">
+                <div class="field group">
                     <label>Length of experiment (days):</label>
                     <input type="text" name="lengthOfExprimentInDays">
                 </div>
@@ -61,14 +61,13 @@
     	</div>
     </div>
     <div class="col-right-1 p10">
-        This is how you generate a survival curve. 
-
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <p>
+            Enter in your surival data here to generate a survival curve. 
+        </p>
+        
+        <p>
+            For each data set, enter the label for that data set, the number of samples in the data set and the time each sample died. The times of death should be comma separated (ex: 2, 6, 6, 8).
+        </p>
     </div>
 </div>
 {% endblock %}
