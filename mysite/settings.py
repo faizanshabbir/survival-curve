@@ -92,8 +92,8 @@ if hostname == "survive-this-curve":
         }
     }
 else:
-    DEBUG = False
-    TEMPLATE_DEBUG = False
+    DEBUG = True
+    TEMPLATE_DEBUG = True
     
     # Database
     # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
