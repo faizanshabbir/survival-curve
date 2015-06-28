@@ -705,6 +705,7 @@
         float: right;
         margin-right: 1em;
         padding-top: 2em;
+        color: white;
     }
 
     header .login-links a{
