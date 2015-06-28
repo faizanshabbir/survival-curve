@@ -63,11 +63,7 @@ def register(request):
         form = basicUserSignup(request.POST)
         if form.is_valid():
             new_user = form.save()
-<<<<<<< HEAD
             return HttpResponseRedirect("/")
-=======
-            return HttpResponseRedirect("home")
->>>>>>> origin/master
     else:
         form = basicUserSignup()
     return render(request, "registration/register.html", {
