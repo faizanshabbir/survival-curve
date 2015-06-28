@@ -9,6 +9,7 @@ from django.contrib import auth
 from models import subscribeList
 from models import contactForm
 from forms import ContactKMForm
+from forms import basicUserSignup
 
 from mailchimp import utils
 MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
@@ -59,12 +60,12 @@ def generate_curve(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = basicUserSignup(request.POST)
         if form.is_valid():
             new_user = form.save()
             return HttpResponseRedirect("home")
     else:
-        form = UserCreationForm()
+        form = basicUserSignup()
     return render(request, "registration/register.html", {
         'form': form,
     })
