@@ -110,9 +110,6 @@ def user_login(request):
         # blank dictionary object...
         return render_to_response('registration/login.html', {}, context)
 
-def user_logout(request):
-	return render(request, 'survival/humza_input.html')
-
 def subscribe(request):
 
 	context = RequestContext(request)
