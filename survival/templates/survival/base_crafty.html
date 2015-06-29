@@ -47,8 +47,8 @@
 				</ul>
 			</nav>
 			{% if user.is_authenticated %}
-				<div>
-					Hello {{ user.username }}(<a href="{% url 'survival.views.user_logout' %}">Logout</a>)
+				<div class="login-links">
+					Hello {{ user.username }} (<a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>)
 				</div>
 			{% else %}
 				<div class="login-links">
