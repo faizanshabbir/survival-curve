@@ -75,7 +75,7 @@ STATIC_URL = '/static/'
 import socket
 hostname = socket.gethostname()
 if hostname == "survive-this-curve":
-    DEBUG = False
+    DEBUG = True
     TEMPLATE_DEBUG = False
 
     # Database

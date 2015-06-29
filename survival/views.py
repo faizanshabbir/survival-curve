@@ -10,6 +10,7 @@ from models import subscribeList
 from models import contactForm
 from forms import ContactKMForm
 from forms import basicUserSignup
+from django.contrib.auth.models import Group, User
 
 from mailchimp import utils
 MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
@@ -144,3 +145,14 @@ def contactKM(request):
             return HttpResponse("Contact Message Sent!")
     else:
         return HttpResponse("Error. Unable to send contact message.")
+
+
+def is_basic_user(user):
+    return user.groups.filter(name='basic user').exists()
+
+def is_paid_user(user):
+    return user.groups.filter(name='paid user').exists()
+
+def checkPerm(request):
+    if User.groups.filter(name='basic user').exists():
+        return HttpResponse("You belong to the basic user group!")
