@@ -15,6 +15,18 @@ from django.contrib.auth.models import Group, User
 from mailchimp import utils
 MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
 
+from django.contrib.auth.decorators import user_passes_test
+
+def group_required(request,*group_names):
+    """Requires user membership in at least one of the groups passed in."""
+    # def in_groups(request,group_names):
+    if request.user.is_authenticated():
+        groups_of_user = request.user.groups.values_list('name',flat=True)
+        for group in group_names:
+            if group in groups_of_user:
+                return True
+    return False
+    # return in_groups(request,group_names)
 
 def home(request):
 	return render(request, 'survival/home_crafty.html', {'page_name': 'home'})
@@ -155,5 +167,9 @@ def is_paid_user(user):
     return user.groups.filter(name='paid user').exists()
 
 def checkPerm(request):
-    if User.groups.filter(name='basic user').exists():
-        return HttpResponse("You belong to the basic user group!")
+    if group_required(request,'basic_user'):
+        return HttpResponse('You are a basic user')
+    elif group_required(request, 'paid_user'):
+        return HttpResponse('You are a paid user')
+    else:
+        return HttpResponse('None of those worked')
