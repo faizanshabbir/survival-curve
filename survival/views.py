@@ -11,10 +11,11 @@ from models import contactForm
 from forms import ContactKMForm
 from forms import basicUserSignup
 from django.contrib.auth.models import Group, User
+from .models import GlobalPermission
+from django.contrib.auth.decorators import permission_required
 
 from mailchimp import utils
 MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
-
 
 def home(request):
 	return render(request, 'survival/home_crafty.html', {'page_name': 'home'})
@@ -157,3 +158,8 @@ def is_paid_user(user):
 def checkPerm(request):
     if User.groups.filter(name='basic user').exists():
         return HttpResponse("You belong to the basic user group!")
+
+@permission_required('survival.survival')
+def download(request):
+	print "downloading"
+	return HttpResponse("Hello")

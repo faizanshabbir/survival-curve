@@ -18,5 +18,5 @@ urlpatterns = patterns('',
 	url(r'^contactKM$',views.contactKM),
 	url(r'^subscribe$', views.subscribe),
 	url(r'^email-signup$',views.email_signup),
-	url(r'^testing-perm$',views.checkPerm)
+	url(r'^download$', views.download, name="download")
 )

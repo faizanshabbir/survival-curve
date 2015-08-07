@@ -1,3 +1,46 @@
+// This example was created using Protovis & jQuery
+// Base64 provided by http://www.webtoolkit.info/
+function encode_as_img_and_link(){
+ // Add some critical information
+ $("svg").attr({ version: '1.1' , xmlns:"http://www.w3.org/2000/svg"});
+ 
+ var svg = $("#chart-canvas").html();
+ var b64 = Base64.encode(svg);
+ 
+ // Works in recent Webkit(Chrome)
+ $("body").append($("<img src='data:image/svg+xml;base64,\n"+b64+"' alt='file.svg'/>"));
+ 
+ // Works in Firefox 3.6 and Webit and possibly any browser which supports the data-uri
+ $("body").append($("<a href-lang='image/svg+xml' href='data:image/svg+xml;base64,\n"+b64+"' title='file.svg'>Download</a>"));
+}
+
+(function(){
+ 
+  // var button_id = "download"
+ 
+  // // include this code in your page
+  // // you must have jQuery installed
+  // // you must have a link element with an id of "download"
+  // // this is limited to only one chart on the page (the first)
+  // function encode_as_link(){
+  //   // Add some critical information
+  //   $("svg").attr({ version: '1.1' , xmlns:"http://www.w3.org/2000/svg"});
+ 
+  //   var svg      = $("svg").parent().html(),
+  //       b64      = window.btoa(svg),
+  //       download = $("#download"),
+  //       html     = download.html();
+ 
+  //   download.replaceWith(
+  //     $("<a id='"+button_id+"' href-lang='image/svg+xml' href='data:image/svg+xml;base64,\n"+b64+"'></a>").html(html));
+  // }
+ 
+  // $(function(){
+  //   $("div").delegate("#"+button_id, "mouseover", encode_as_link);
+  // });
+ 
+})();
+
 function fillSampleData() {
 	var inputNames = {
 		"numberOfGroups": 2,

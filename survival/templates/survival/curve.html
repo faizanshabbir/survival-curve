@@ -6,8 +6,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.9/c3.css">
-	<script type="text/javascript">
-	</script>
 
 {% endblock %}
 
@@ -16,7 +14,8 @@
     <div class="col-left-2">
     	<div class="curve-box p10">
             <div class="h1">Your Generated Survival Curve</div>
-            <div id="curve"></div>   
+            <div id="curve"></div>
+            <a href="{% url 'download' %}" id="download" class="button">Download</a> 
         </div>
     	<div class="form-box p10">
             <div class="h1">Generate Curve</div>
