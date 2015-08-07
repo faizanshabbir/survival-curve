@@ -27,3 +27,18 @@
 #chart .c3-line-Group-Dos {
   stroke-width: 5px;
 }
+
+.watermark-box {
+	position: relative;
+}
+
+.watermark-box .watermark {
+	font-size: 2em;
+	-webkit-transform: rotate(-30deg);
+	        transform: rotate(-30deg);
+	opacity: 0.2;
+
+	position: absolute;
+	top: 140px;
+	left: 200px;
+}
