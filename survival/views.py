@@ -11,6 +11,7 @@ from models import contactForm
 from forms import ContactKMForm
 from forms import basicUserSignup
 from django.contrib.auth.models import Group, User
+import stripe
 
 from mailchimp import utils
 MAILCHIMP_LIST_ID = 'ea2be558d7' # KM Survival Newsletter
@@ -71,12 +72,35 @@ def generate_curve(request):
             content_type="application/json"
         )
 
+def contactKM(request):
+    context = RequestContext(request)
+
+    if request.method == 'POST':
+        form = ContactKMForm(request.POST)
+
+        if form.is_valid():
+            name = request.POST['name']
+            email = request.POST['email']
+            message = request.POST['message']
+
+            ContactForm_obj = contactForm(name = name, email = email, message = message)
+            ContactForm_obj = ContactForm_obj.save()
+
+            return HttpResponse("Contact Message Sent!")
+    else:
+        return HttpResponse("Error. Unable to send contact message.")
+
 def register(request):
     if request.method == 'POST':
         form = basicUserSignup(request.POST)
         if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password1']
             new_user = form.save()
-            return HttpResponseRedirect("/")
+            user = auth.authenticate(username=username, password=password)
+            auth.login(request, user)
+            #add user to basic user group
+            return HttpResponseRedirect("survival/payment.html")
     else:
         form = basicUserSignup()
     return render(request, "registration/register.html", {
@@ -123,48 +147,43 @@ def user_login(request):
         # blank dictionary object...
         return render_to_response('registration/login.html', {}, context)
 
-def user_logout(request):
-   return render(request, 'survival/home')
-
-
 def subscribe(request):
-
-	context = RequestContext(request)
-
-	if request.method == 'POST':
-		name = request.POST['personalName']
-		email = request.POST['emailAddress']
-		list = utils.get_connection().get_list_by_id(MAILCHIMP_LIST_ID)
-		list.subscribe(email, {'EMAIL': email})
-		return HttpResponse("Subscribed Successfully!")
-	else:
-		return HttpResponse("Error. Unable to subscribe.")
-
-def contactKM(request):
-
     context = RequestContext(request)
 
     if request.method == 'POST':
-        form = ContactKMForm(request.POST)
-
-        if form.is_valid():
-            name = request.POST['name']
-            email = request.POST['email']
-            message = request.POST['message']
-
-            ContactForm_obj = contactForm(name = name, email = email, message = message)
-            ContactForm_obj = ContactForm_obj.save()
-
-            return HttpResponse("Contact Message Sent!")
+        name = request.POST['personalName']
+        email = request.POST['emailAddress']
+        list = utils.get_connection().get_list_by_id(MAILCHIMP_LIST_ID)
+        list.subscribe(email, {'EMAIL': email})
+        return HttpResponse("Subscribed Successfully!")
     else:
-        return HttpResponse("Error. Unable to send contact message.")
+        return HttpResponse("Error. Unable to subscribe.")
 
+def payment(request):
+    return render(request, "survival/payment.html")
 
-def is_basic_user(user):
-    return user.groups.filter(name='basic user').exists()
+def process_payment(request):
+    # Set your secret key: remember to change this to your live secret key in production
+    # See your keys here https://dashboard.stripe.com/account/apikeys
+    stripe.api_key = "sk_test_7kmr2dA30d1UxmnVNMRoG4Wd"
 
-def is_paid_user(user):
-    return user.groups.filter(name='paid user').exists()
+    # Get the credit card details submitted by the form
+    token = request.POST['stripeToken']
+
+    # Create the charge on Stripe's servers - this will charge the user's card
+    try:
+        charge = stripe.Charge.create(
+          amount=500, # amount in cents, again
+          currency="usd",
+          source=token,
+          description="Example charge"
+        )
+        g = Group.objects.get(name = 'paid user')
+        g.user_set.add(request.user)
+        return HttpResponse("Successfully added to paid user group because of successful payment")
+    except stripe.error.CardError, e:
+        # The card has been declined
+        return HttpResponse("Card didnt work")
 
 def checkPerm(request):
     if group_required(request,'basic_user'):
@@ -173,6 +192,7 @@ def checkPerm(request):
         return HttpResponse('You are a paid user')
     else:
         return HttpResponse('None of those worked')
+
 
 def download(request):
 	print "downloading"

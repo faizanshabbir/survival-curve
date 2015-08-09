@@ -18,5 +18,7 @@ urlpatterns = patterns('',
 	url(r'^contactKM$',views.contactKM),
 	url(r'^subscribe$', views.subscribe),
 	url(r'^email-signup$',views.email_signup),
+	url(r'^payment$',views.payment),
+	url(r'^process_payment$',views.process_payment),
 	url(r'^download$', views.download, name="download")
 )
